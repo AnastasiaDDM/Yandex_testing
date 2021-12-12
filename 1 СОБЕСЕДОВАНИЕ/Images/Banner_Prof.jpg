@@ -1,0 +1,1742 @@
+
+    <!DOCTYPE html>
+    <html lang="ru-ru">
+
+    <head id="Head1"><meta name="google-site-verification" content="jjf0soS60kPd1w1KbApi-Y-mAWtF2U9VJkI18FcfxLI" /><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>
+	Байкальский государственный университет (БГУ - Новости)
+</title><meta name="description" content="Байкальский государственный университет (БГУ) - один из старейших вузов Сибири." /><meta name="keywords" content="БГУ, Байкальский государственный университет, высшее образование, среднее профессиональное образование, бакалавриат, специалитет, магистратура, аспирантура, колледж, среднее профессиональное образование" /> 
+        <script src="/js/jquery2.js"></script>
+        <script src="/js/jquery-migrate-1.3.0.min.js"></script>
+        <script src="/js/jquery.cookie.js"></script> 
+        <script src="/js/jquery.speccialversion.js"></script>
+        <script>
+            jQuery(document).ready(function () {
+                $('#langb a img').hover(function () {
+                    this.src = '/img/2016/langbh.jpg';
+                }, function () {
+                    this.src = '/img/2016/langb.jpg';
+                });
+                $('#paymentBox img').hover(function () {
+                    this.src = '/img/ui/payment-hover.jpg';
+                }, function () {
+                    this.src = '/img/ui/payment.jpg';
+                });
+                $("#MenuLeft").show();
+                $('#asimple').specialVersion({
+                    'base-style': '/Styles/light.css'
+                });
+                $('.sectionShowHide').click(function () {
+                    console.log('sectionID: ');
+                    var sectionID = $(this).attr('id');
+                    var section = '.section' + sectionID;
+                    console.log('sectionID: ' + sectionID);
+                    console.log('section: ' + section);
+                    $(section).slideToggle("fast");
+                    return false;
+                });
+
+                var pathname = window.location.pathname;
+                if (pathname == '/news/') {
+                    $("#MainContent_DDLyear option[value=2014]").remove();
+                    $("#MainContent_DDLyear option[value=2015]").remove();
+                }
+
+                if (pathname == '/massmedia/gazeta/') {
+                    $("#MainContent_RBLyear_4").hide(); 
+                    $("label:last-child").hide();
+                }
+
+                // console.log(pathname);
+            });
+        </script>
+        <script src="/js/audioplayer.js"></script>
+        <script src="/js/qa_accordeon/jquery.accordion.js"></script>
+        <script src="/js/qa_accordeon/jquery.easing.1.3.js"></script>
+        <script>
+            $(function () {
+                $('#st-accordion').accordion({
+                    oneOpenedItem: true
+                });
+                $('#st-accordion2').accordion({
+                    oneOpenedItem: true
+                });
+            });
+        </script>
+        <script id="slimbox2-js" src="/js/Slimbox-2.04/js/slimbox2.js"></script>
+        <link href="Styles/Sitenew.css?ups20" rel="stylesheet" /><link href="encyclopedia_irkutskoy_oblasti/source/style.css?37" rel="stylesheet" /><link rel="stylesheet" href="Styles/qa_accordeon/style.css" /><link rel="SHORTCUT ICON" href="/favicon.png" type="image/png" /><link media="screen" href="/js/Slimbox-2.04/css/slimbox2.css?ver=1.1" rel="stylesheet" /><link rel="stylesheet" href="Styles/audioplayer.css" /><link rel="stylesheet" type="text/css" href="Styles/font-awesome.min.css" />
+        <script>
+            var images = new Array();
+            images[0] = "/img/shapka/16.jpg";
+            images[1] = "/img/shapka/01.jpg";
+            images[2] = "/img/shapka/02.jpg";
+            images[3] = "/img/shapka/03.jpg";
+            images[4] = "/img/shapka/04.jpg";
+            images[5] = "/img/shapka/05.jpg?2";
+            images[6] = "/img/shapka/06.jpg";
+            images[7] = "/img/shapka/07_.jpg";
+            images[8] = "/img/shapka/08.jpg";
+            images[9] = "/img/shapka/09.jpg";
+            images[10] = "/img/shapka/10.jpg";
+            images[11] = "/img/shapka/11.jpg";
+            images[12] = "/img/shapka/12.jpg";
+            images[13] = "/img/shapka/13.jpg";
+            images[14] = "/img/shapka/14.jpg";
+            images[15] = "/img/shapka/15_.jpg";
+            images[16] = "/img/shapka/17.jpg";
+
+            function animate(i, alfa, step) {
+                slide = document.getElementById("slide");
+                slide.style.opacity = alfa / 100;
+                slide.style.filter = "progid:DXImageTransform.Microsoft.Alpha(opacity=" + alfa + ")";
+                slide.style.filter = "alpha(opacity=" + alfa + ")";
+                if ((alfa - step) > 0) {
+                    setTimeout("animate(" + i + "," + (alfa - step) + "," + step + ");", 5);
+                } else {
+                    slide.style.opacity = 0;
+                    slide.style.filter = "progid:DXImageTransform.Microsoft.Alpha(opacity=" + 0 + ")";
+                    slide.style.filter = "alpha(opacity=" + 0 + ")";
+                    i = i + 1;
+                    if (i > 16) {
+                        i = 0
+                    };
+                    var img = new Image();
+                    img.src = images[i];
+                    img.onload = slide.src = img.src;
+                    setTimeout("animate_(" + i + ", 0, 1);", 10);
+                }
+            }
+
+            function animate_(i, alfa, step) {
+                slide = document.getElementById("slide");
+                slide.style.opacity = alfa / 100;
+                slide.style.filter = "progid:DXImageTransform.Microsoft.Alpha(opacity=" + alfa + ")";
+                slide.style.filter = "alpha(opacity=" + alfa + ")";
+                if ((alfa + step) < 100) {
+                    setTimeout("animate_(" + i + "," + (alfa + step) + "," + step + ");", 5);
+                } else {
+                    slide.style.opacity = 1.0;
+                    slide.style.filter = "progid:DXImageTransform.Microsoft.Alpha(opacity=" + 100 + ")";
+                    slide.style.filter = "alpha(opacity=" + 100 + ")";
+                    setTimeout("animate(" + i + ", 100, 1);", 5000);
+                }
+            }
+            setTimeout("animate(0, 100, 1);", 5000);
+        </script>
+    <style type="text/css">
+	/* <![CDATA[ */
+	#MenuTop { background-color:Transparent; }
+	#MenuTop img.icon { border-style:none;vertical-align:middle; }
+	#MenuTop img.separator { border-style:none;display:block; }
+	#MenuTop img.horizontal-separator { border-style:none;vertical-align:middle; }
+	#MenuTop ul { list-style:none;margin:0;padding:0;width:auto; }
+	#MenuTop ul.dynamic { z-index:1;margin-left:2px;margin-top:2px; }
+	#MenuTop a { text-decoration:none;white-space:nowrap;display:block; }
+	#MenuTop a.static { padding-left:0.15em;padding-right:0.15em; }
+	#MenuTop a.popout { background-image:url("img/to.gif");background-repeat:no-repeat;background-position:right center;padding-right:14px; }
+	#MenuTop a.popout-dynamic { background:url("img/tod.gif") no-repeat right center;padding-right:14px; }
+	/* ]]> */
+</style><style type="text/css">
+	/* <![CDATA[ */
+	#MenuLeft { background-color:#2E7CBB;width:215px; }
+	#MenuLeft img.icon { border-style:none;vertical-align:middle; }
+	#MenuLeft img.separator { border-style:none;display:block; }
+	#MenuLeft ul { list-style:none;margin:0;padding:0;width:auto; }
+	#MenuLeft ul.dynamic { z-index:1; }
+	#MenuLeft a { color:White;text-decoration:none;white-space:nowrap;display:block; }
+	#MenuLeft a.static { width:210px;text-decoration:none; }
+	#MenuLeft a.popout { background-image:url("img/tod.gif");background-repeat:no-repeat;background-position:right center;padding-right:14px; }
+	/* ]]> */
+</style></head>
+
+    <body>
+        <form method="post" action="/" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="izR58slQsmXCgN3GFbkl254nKQGG4AuFW2D786ZQjGyLg9kcF7V6THwYAJszVHAPdJHQghl+a+HYJHFa7JmSqXAjNnkrPzf3cERpsz/TonIkjzfas6CxnaX8SBt7j3ZeCLYJeOT9pKzNr0jfCiOpGvoTS1kE6e6CEUXV98tjDYoc3qrr8K+MA9Wj8VAByrYfTrPXFRlRNKxt+nkZw+o7nKl2c1MYNP2OFnPjUPi4PRO06lcFSmrxll4iPVCsiwy1w+bmJUm7h7bKACVdLGrcyg==" />
+
+
+<script src="/WebResource.axd?d=muO4q32s-IGiD15BMFenhADxS4Hr1uAgslrBJyAf1Eu7uJvlpUJSk4rEwyX1Li5APtekde8JLejX5oSsqFGtU1T2v0YxCXHcIiWtbRh8Y7s1&amp;t=634972003065510185" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="Lalgu+pAsu0/E4Rj30WtRin3cqTO5PCN0GMChGdw2hq2DsDekVGpKOF/fJgyTlsxQ66gCVqGqIPg+k6vh4i1gFRGzQaxPdcFzyPSsUiLjLBslYqymcCNxlnqmAAfeu/a1Nn/F5wNcGHBG+KWX0Dt8WKHrq3nYNpEla2b02Rov0kdzWRNAGiq3VLxBR4/kcWGLk8b4PQLSr0sCA1liYDag17HijWMaus8U1pCVMNlUE9ZuVl2tw4vzqSdqwsJ0jsJjIbyfChBHd36VjdNLEGszOSqYzYRHv/PidVo7TO43acgt23EpS8CMVR2eC2RbpateZZGj72osgN2QlsXfq80Sz+5O042KXMdnFxJG9XMA4IBUzmW9Y1yDRXmUASkTjyzxc1MEj4zLYW6Pt5SYpvsnMWLgzVjnS1NFAY2H8CIRFLl/z2nI123HLYu7+cvh2Vp2Hc3irkNDo64ODHO98P5Z9GogHmbzpfiPy6QCNCRk07PlcZ4sdSjT7FAqxncHqTjqUuPpNZF+k073/U9bAv6CG+t159wzK2iR+/dAf/PzIaGZ5Af29jvZgrRSevRaEJEVdGehm0rF5E10sNaUEnNXA==" />
+            
+
+            
+
+            <div class="page">
+                <div class="header">
+                    <div class="pic">
+                        <img src="/img/shapka/16.jpg" alt="Байкальский государственный университет" id="slide" style=" width:465px; height:200px; display:block;"
+                        />
+                    </div>
+                    
+                    <div class="bgmain">
+                        <img src="/img/logo20.png" alt="Байкальский государственный университет" />
+                    </div>
+                    <div class="priem">
+                        <span style="font-size:1.5em;">т. (3952) 5-0000-5</span>
+                        <br />E-mail:
+                        <a href="mailto:priem@bgu.ru" style="text-decoration:none; color:#000000;">priem@bgu.ru</a>
+                        <br />664003, г. Иркутск, ул. Ленина, 11</div>
+                    <div class="priemask" style="z-index:99;">
+                        <a href="http://prof.bgu.ru/olimp/">Олимпиады
+                            <br>и профориентация</a>
+                    </div>
+                    <div class="priemsite">
+                        <a href="http://bgu.ru/abitur/">Прием 2021</a>
+                    </div>
+                    <!-- <div class="priemonline"><a href="https://priem.bgu.ru/">ON-LINE подача заявления</a></div> -->
+                    <div style="position:absolute;top:60px;left:513px;" id="socblock">
+                    </div>
+                    <div style="height:10px;"></div>
+                    <div class="s6 obr">
+                        <a href="http://dissovet.bgu.ru/">ДИССЕРТАЦИОННЫЕ СОВЕТЫ</a>
+                    </div>
+                    <div class="s5 obr">
+                        <a href="http://bgu.ru/abitur/asp/">АСПИРАНТУРА и ДОКТОРАНТУРА</a>
+                    </div>
+                    <div class="s4 obr">
+                        <a href="http://ipk.bgu.ru/">ПОВЫШЕНИЕ КВАЛИФИКАЦИИ</a>
+                    </div>
+                    <div class="s3 obr">
+                        <a href="http://bgu.ru/abitur/mag/">МАГИСТРАТУРА</a>
+                    </div>
+                    <div class="s2 obr">
+                        <a href="http://bgu.ru/abitur/bach/">БАКАЛАВРИАТ и СПЕЦИАЛИТЕТ</a>
+                    </div>
+                    <div class="s1 obr">
+                        <a href="http://bgu.ru/abitur/spo/">СРЕДНЕЕ профессиональное образование</a>
+                    </div>
+                    <a href="#special" style="color:#fff;position:absolute;right:30px;top:15px; font-size:1.2em;" id="asimple" class="asimple"
+                        itemprop="Copy">Версия для слабовидящих</a>
+                    <!--<div id="divflags" style=""></div>-->
+                </div>
+                <div id="menutopdiv">
+                    <a href="#MenuTop_SkipLink"><img alt="Проход по ссылкам навигации" src="/WebResource.axd?d=U1OGT2dQ4Rgu132kQUXukEd-fwFhcgP8GvEti9uSUOOirzgO_3mFA3TVA-vUclbaOXofZB8nO63WbPxRnbYx-EtAq0UxughCcJr_rZj86nM1&amp;t=634972003065510185" width="0" height="0" border="0" /></a><div class="menutop " id="MenuTop">
+	<ul class="level1">
+		<li><a title="Вся информация об университете" class="popout level1" href="/sveden/">Сведения об образовательной организации</a><ul class="level2">
+			<li><a title="Информация о наименовании, учредителях, дате создания, месте нахождения, режиме и графике работы, контактных телефнах и адресах электронной почты" class="level2" href="/sveden/common/">Основные сведения</a></li><li><a class="popout-dynamic level2" href="/sveden/struct/">Структура и органы управления образовательной организацией</a><ul class="level3">
+				<li><a class="level3" href="/sveden/struct/psovet1.aspx">Попечительский совет</a></li><li><a class="level3" href="/sveden/struct/usovet.aspx">Ученый совет</a></li><li><a class="level3" href="/sveden/struct/prorectors.aspx">Ректорат</a></li><li><a class="level3" href="/sveden/struct/directors.aspx">Директора филиалов</a></li><li><a class="level3" href="/sveden/struct/devision.aspx">Структурные подразделения</a></li><li><a class="level3" href="/sveden/struct/branchs.aspx">Филиалы</a></li>
+			</ul></li><li><a class="level2" href="/sveden/document/">Документы</a></li><li><a class="level2" href="/sveden/education/">Образование</a></li><li><a class="level2" href="/sveden/eduStandarts/">Образовательные стандарты</a></li><li><a class="popout-dynamic level2" href="/sveden/employees/">Руководство. Педагогический состав</a><ul class="level3">
+				<li><a class="level3" href="/sveden/struct/prorectors.aspx">Ректорат</a></li><li><a class="level3" href="/sveden/struct/directors.aspx">Директора филиалов</a></li><li><a class="level3" href="/sveden/employees/kaf.aspx">Педагогический состав</a></li><li><a class="level3" href="/sveden/employees/pps.aspx">Резюме преподавателей</a></li>
+			</ul></li><li><a class="level2" href="/sveden/objects/">Материально-техническое обеспечение и оснащенность образовательного процесса</a></li><li><a class="popout-dynamic level2" href="/sveden/grants/">Стипендии и иные виды материальной поддержки</a><ul class="level3">
+				<li><a title="Информация о стипендиях, положение о стипендиальном обеспечении и других формах материальной поддержки студентов и аспирантов в ФГБОУ ВО «БГУ», приказы о размере стипендий и надбавок обучающимся" class="level3" href="/sveden/grants/help.aspx">Стипендии</a></li><li><a title="Информация о наличии общежитий, общей и жилой площади, приказы о стоимости проживания в общежитии" class="level3" href="/sveden/grants/hostel.aspx">Общежитие</a></li><li><a class="level3" href="/sveden/grants/trud.aspx">Трудоустройство выпускников</a></li>
+			</ul></li><li><a class="level2" href="/sveden/paid_edu/">Платные образовательные услуги</a></li><li><a class="level2" href="/sveden/budget/">Финансово-хозяйственная деятельность</a></li><li><a class="level2" href="/sveden/vacant/">Вакантные места для приема(перевода)</a></li><li><a class="level2" href="/about/inclusive/">Доступная среда</a></li><li><a class="level2" href="/sveden/iternational/">Международное сотрудничество</a></li><li><a class="level2" href="/about/contacts.aspx">Контактная информация</a></li><li><a class="level2" href="/about/files/BGU-requisites2021.pdf">Банковские реквизиты</a></li>
+		</ul></li><li><a class="popout level1" href="/edu/edu.aspx">Образование</a><ul class="level2">
+			<li><a title="Информация об образовательных программах аспирантуры БГУ" class="popout-dynamic level2" href="/edu/vpo/asp/">Высшее - Аспирантура</a><ul class="level3">
+				<li><a title="Информация об образовательных программах аспирантуры, по которым ведется обучение в текущем учебном году" class="level3" href="/edu/vpo/asp/programs.aspx">Реализуемые образовательные программы</a></li><li><a title="Информация об образовательных программ аспирантуры, прием на которые будет осуществлен в 2021 году" class="level3" href="http://bgu.ru/abitur/asp/">Образовательные программы (прием 2021)</a></li><li><a title="Образовательные стандарты аспирантуры" class="level3" href="/edu/vpo/asp/standart.aspx">Образовательные стандарты</a></li><li><a title="Информация о численности обучающихся по образовательным программам аспирантуры" class="level3" href="/edu/vpo/asp/students.aspx">Численность обучающихся</a></li>
+			</ul></li><li><a title="Информация об образовательных программах магистратуры" class="popout-dynamic level2" href="/edu/vpo/mag/">Высшее - Магистратура</a><ul class="level3">
+				<li><a title="Информация об образовательных программах магистратуры, по которым ведется обучение в текущем учебном году" class="level3" href="/edu/vpo/mag/programs.aspx">Реализуемые образовательные программы</a></li><li><a title="Информация об образовательных программах магистратуры, прием на которые будет осуществлен в 2021 году" class="level3" href="http://bgu.ru/abitur/mag/">Образовательные программы (прием 2021)</a></li><li><a title="Образовательные стандарты магистратуры" class="level3" href="/edu/vpo/mag/standart.aspx">Образовательные стандарты</a></li><li><a title="Информация о численности обучающихся по образовательным программам магистратуры" class="level3" href="/edu/vpo/mag/students.aspx">Численность обучающихся</a></li>
+			</ul></li><li><a title="Информация об образовательных программах Специалитета" class="popout-dynamic level2" href="/edu/vpo/spec/">Высшее - Специалитет</a><ul class="level3">
+				<li><a title="Информация об образовательных программах специалитета, по которым ведется обучение в текущем учебном году" class="level3" href="/edu/vpo/spec/programs.aspx">Реализуемые образовательные программы</a></li><li><a title="Информация об образовательных программ специалитета, прием на которые будет осуществлен в 2021 году" class="level3" href="http://bgu.ru/abitur/bach/">Образовательные программы (прием 2021)</a></li><li><a title="Образовательные стандарты специалитета" class="level3" href="/edu/vpo/spec/standart.aspx">Образовательные стандарты</a></li><li><a title="Информация о численности обучающихся по образовательным программам специалитета" class="level3" href="/edu/vpo/spec/students.aspx">Численность обучающихся</a></li>
+			</ul></li><li><a title="Информация о реализуемых образовательных прогрммах бакалавриата" class="popout-dynamic level2" href="/edu/vpo/bach/">Высшее - Бакалавриат</a><ul class="level3">
+				<li><a title="Информация об образовательных программах бакалавриата, по которым ведется обучение в текущем учебном году" class="level3" href="/edu/vpo/bach/programs.aspx">Реализуемые образовательные программы</a></li><li><a title="Информация об образовательных программ бакалавриата, прием на которые будет осуществлен в 2021 году" class="level3" href="http://bgu.ru/abitur/bach/">Образовательные программы (прием 2021)</a></li><li><a title="Образовательные стандарты бакалавриата" class="level3" href="/edu/vpo/bach/standart.aspx">Образовательные стандарты</a></li><li><a title="Информация о численности обучающихся по образовательным программам бакалавриата" class="level3" href="/edu/vpo/bach/students.aspx">Численность обучающихся</a></li>
+			</ul></li><li><a class="popout-dynamic level2" href="/edu/spo/">Среднее профессиональное</a><ul class="level3">
+				<li><a class="level3" href="/edu/spo/kordsovet.aspx">Координационный совет</a></li><li><a title="Перечень специальностей СПО" class="level3" href="/edu/spo/progspo.aspx">Реализуемые образовательные программы</a></li><li><a title="Информация об образовательных программ среднего профессионального образования, прием на которые будет осуществлен в 2021 году" class="level3" href="http://bgu.ru/abitur/spo/">Образовательные программы (прием 2021)</a></li><li><a title="Условия приема выпускников СПО в Байкальский университет" class="level3" href="/edu/spo/future.aspx">Продолжение обучения</a></li><li><a title="Отчетность СПО" class="level3" href="/edu/spo/report.aspx">Отчетность СПО</a></li>
+			</ul></li><li><a class="level2" href="http://ipk.bgu.ru/">Повышение квалификации</a></li>
+		</ul></li><li><a class="popout level1" href="/science/">Наука</a><ul class="level2">
+			<li><a class="level2" href="http://science.bgu.ru/">Научная деятельность</a></li><li><a title="Включенные в Перечень ведущих рецензируемых научных журналов и изданий, в которых должны быть опубликованы основные научные результаты диссертаций на соискание ученых степеней доктора и кандидата наук." class="popout-dynamic level2" href="/science/journals.aspx">Научные журналы</a><ul class="level3">
+				<li><a title="Печатное издание. До сентября 2016 года журнал издавался под названием «Криминологический журнал Байкальского государственного университета экономики и права». Выходит 4 раза в год." class="level3" href="http://cj.bgu.ru/">Всероссийский криминологический журнал (ВАК,  Web of Science, РИНЦ, ERIH PLUS)</a></li><li><a title="Печатное издание. Выходит 4 раза в год." class="level3" href="http://jq.bgu.ru/">Вопросы теории и практики журналистики (ВАК, Web of Science, РИНЦ, ERIH PLUS)</a></li><li><a title="Полное название - «Известия Байкальского государственного университета». До 2016 года журнал издавался под названием «Известия Иркутской государственной экономической академии». Печатное издание. Выходит 4 раза в год." class="level3" href="http://izvestia.bgu.ru/">Известия БГУ (ВАК, РИНЦ)</a></li><li><a title="Печатное издание. Выходит 4 раза в год." class="level3" href="http://jhist.bgu.ru/">Историко-экономические исследования (ВАК, РИНЦ, ERIH PLUS)</a></li><li><a title="Печатное издание. Выходит 4 раза в год." class="level3" href="http://samm-bgu.ru/">System Analysis & Mathematical Modeling (РИНЦ)</a></li><li><a title="Электронное издание. Выходит 4 раза в год." class="level3" href="http://brj-bguep.ru/">Baikal Research Journal (ВАК, РИНЦ)</a></li><li><a title="Печатное издание. Выходит 4 раза в год." class="level3" href="http://rcs.bgu.ru/">Российско-китайские исследования (РИНЦ)</a></li><li><a title="Электронное издание. Выходит 4 раза в год." class="level3" href="http://grr-bgu.ru/">Global and regional research (РИНЦ)</a></li><li><a title="Печатное издание. Выходит 4 раза в год." class="level3" href="http://law.bgu.ru/Glavnaja/Nauchnaja-zhiznq/Nauchnye-zhurnaly/Sibirskie-ugolovno-processualqnye-i-kriminalisticheskie-chtenija">Сибирские уголовно-процессуальные и криминалистические чтения (ВАК, РИНЦ)</a></li><li><a title="Электронное издание. Выходит 1 раза в год." class="level3" href="http://history.bgu.ru/hee/">Иркутский историко-экономический ежегодник (РИНЦ)</a></li><li><a title="Печатное издание. Издавался в 2009–2107 гг" class="level3" href="http://journalpsy.bgu.ru/">Психология в экономике и управлении (РИНЦ)</a></li>
+			</ul></li><li><a title="Полнотекстовые публикации ученых Байкальского университета" class="level2" href="http://sgal.bgu.ru/">Галерея ученых</a></li><li><a title="ФГБОУ ВО Байкальский государственный университет объявляет конкурс на вакантные должности научных работников" class="level2" href="/science/kns.aspx">Конкурс научных работников</a></li><li><a title="Прикрепление для подготовки диссертации" class="level2" href="/science/sois.aspx">Прикрепление для подготовки диссертации</a></li>
+		</ul></li><li><a title="Международная деятельность" class="popout level1" href="/inter/">Международная деятельность</a><ul class="level2">
+			<li><a title="Информация об Управление международной деятельности БГУ" class="level2" href="/inter/umd.aspx">Управление международной деятельности</a></li><li><a class="level2" href="/inter/grants.aspx">Международные конкурсы и гранты</a></li><li><a title="Направления международной деятельности БГУ: участие в международных проектах, образовательные программы двойного дипломирования" class="popout-dynamic level2" href="/inter/rel.aspx">Международные связи</a><ul class="level3">
+				<li><a class="level3" href="/inter/partners.aspx">Зарубежные вузы-партнеры</a></li><li><a class="level3" href="/sveden/iternational/">Договоры с вузами-партнерами</a></li><li><a class="level3" href="/inter/org.aspx">БГУ в международных организациях</a></li><li><a class="level3" href="/inter/leader-project.aspx">LEADER PROJECT</a></li>
+			</ul></li><li><a class="popout-dynamic level2" href="/inter/student.aspx">Иностранным студентам</a><ul class="level3">
+				<li><a class="level3" href="/inter/study.aspx">Обучение в БГУ</a></li><li><a class="level3" href="http://bgu.ru/eng">Foreign students</a></li><li><a class="level3" href="/inter/reg.aspx">Регистрация иностранных граждан и визовая поддержка</a></li>
+			</ul></li><li><a class="popout-dynamic level2" href="/inter/acmob.aspx">Академическая мобильность</a><ul class="level3">
+				<li><a title="Информация об образовательных программах двойного дипломирования, которые БГУ реализует совместно с различными университетами мира" class="level3" href="/inter/prog.aspx">Программы двойного дипломирования</a></li><li><a class="level3" href="/inter/schoole.aspx">Летние школы, стажировки</a></li>
+			</ul></li><li><a class="popout-dynamic level2" href="/inter/lang.aspx">Иностранные языки</a><ul class="level3">
+				<li><a class="level3" href="/inter/standart.aspx">Стандарты владения иностранным языком</a></li><li><a class="level3" href="/inter/course.aspx">Курсы и языковые школы</a></li><li><a class="level3" href="/inter/test.aspx">Центры тестирования</a></li>
+			</ul></li>
+		</ul></li><li><a class="level1" href="http://lib.bgu.ru/">Библиотека</a></li><li><a class="level1" href="/help/phonebook.aspx">Телефонная книга</a></li>
+	</ul>
+</div><a id="MenuTop_SkipLink"></a>
+                    <div style="position:absolute; margin-left:-70px; margin-top:-22px;">
+                       
+                        
+                        
+                    </div>
+                </div>
+                <div class="soc">
+                    <table style=" width:100%; ">
+                        <tbody><tr>
+                            <td>
+    
+                                <div id="engsite">
+                                    <a href="http://bgu.ru/eng" target="_blank">
+                                        <img src="http://bgu.ru/img/flag/eng.png" alt="БГУ для Англоязычных абитуриентов"><span>International Students: Admission and Studying</span>
+                                    </a>
+                
+                                </div>
+                                <!-- <div class="social-box">
+                                    <ul style="text-align: left;">
+                                        <li class="scmusic"><a href="/mp3/" target="_blank"
+                                                title="Гимн Байкальского университета"><i class="fa fa-music fa-2x"
+                                                    aria-hidden="true"></i></a></li>
+                                        <li class="scrss"><a href="/news/rss/" target="_blank"
+                                                title="RSS-лента Байкальского университета"><i class="fa fa-rss fa-2x"
+                                                    aria-hidden="true"></i></a></li>
+                                        <li class="scwifi"><a href="/wifi/wifizone.aspx" target="_blank"
+                                                title="WiFi Байкальского университета"><i class="fa fa-wifi fa-2x"
+                                                    aria-hidden="true"></i></a></li>
+                                        <li><a href="http://www.investbgu.ru/vr2/" target="_blank"
+                                                title="Виртуальный тур по Байкальскому университету" style="color:white;"><i class="fa fa-camera" aria-hidden="true"></i>
+    </a></li>
+                                    </ul>
+                                </div> -->
+                                
+                            </td>
+    
+                            <td style="color:#f1f1f1; font-size:1.2em; text-transform:uppercase; text-align:right;">
+                                <!-- Мы в соцсетях: -->
+                            </td>
+                            <td style="width: 265px;">
+                                <div class="social-box">
+                                    <ul>
+                                        <li class="vk"><a href="http://vk.com/vkbaikalgu" target="_blank" title="БГУ в VK"><i class="fa fa-vk fa-2x" aria-hidden="true"></i></a></li>
+                                        <li class="facebook"><a href="https://www.facebook.com/BaikalGU/" target="_blank" title="БГУ в Facebook"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+                                        <!-- <li class="livejournal"><a href="http://bnuel.livejournal.com/" target="_blank" title="БГУ в livejournal"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></a></li> -->
+                                        <li class="twitter"><a href="https://twitter.com/BaikalGU" target="_blank" title="БГУ в Twitter"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+                                        <li class="instagram"><a href="https://instagram.com/baikaluniversity/" target="_blank" title="БГУ в instagram"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                                        <li class="youtube"><a href="https://www.youtube.com/channel/UCFXEprFr00VWj8dD8581G6A/feed" target="_blank" title="БГУ в YouTube"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></li>
+                                        <li class="odnoklassniki"><a href="https://ok.ru/group/52934268092557" target="_blank" title="БГУ в Одноклассниках"><i class="fa fa-odnoklassniki fa-2x" aria-hidden="true"></i></a></li>
+                                        <li class="telegram"><a href="https://t.me/tg_bgu" target="_blank" title="БГУ в Telegram"><i class="fa fa-telegram fa-2x" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </td>
+    
+                        </tr>
+                    </tbody></table>
+    
+    
+                </div>
+                <div id="menuleftdiv" style="padding-bottom:0;">
+                    <a href="#MenuLeft_SkipLink"><img alt="Проход по ссылкам навигации" src="/WebResource.axd?d=U1OGT2dQ4Rgu132kQUXukEd-fwFhcgP8GvEti9uSUOOirzgO_3mFA3TVA-vUclbaOXofZB8nO63WbPxRnbYx-EtAq0UxughCcJr_rZj86nM1&amp;t=634972003065510185" width="0" height="0" border="0" /></a><div class="leftmenu" id="MenuLeft">
+	<ul class="level1">
+		<li><a class="level1" href="/student/health/koronavir.aspx">Профилактика <br />коронавирусной инфекции</a></li><li><a class="popout level1" href="/">Новости</a><ul class="level2">
+			<li><a class="level2" href="/news/usovet/">Ученый совет информирует</a></li><li><a class="level2" href="/">Текущие</a></li><li><a class="level2" href="/news/">Архив новостей</a></li>
+		</ul></li><li><a class="level1" href="/massmedia/smi/">СМИ об университете</a></li><li><a class="level1" href="/quest/">На вопросы отвечает ректорат</a></li><li><a class="popout level1" href="/student/">Студентам</a><ul class="level2">
+			<li><a class="level2" href="/student/study/process.aspx">Об учебном процессе</a></li><li><a title="Памятка первокурснику очного обучения на 2020-2021 уч. год" class="level2" href="/files/2020/%d0%9f%d0%b0%d0%bc%d1%8f%d1%82%d0%ba%d0%b0_%d0%bf%d0%b5%d1%80%d0%b2%d0%be%d0%ba%d1%83%d1%80%d1%81%d0%bd%d0%b8%d0%ba%d1%83-%d0%be%d1%87%d0%bd%d0%b8%d0%ba%d1%83_2020.pdf">Памятка первокурснику-очнику 2020</a></li><li><a title="Памятка первокурснику заочного обучения на 2020-2021 уч. год (бакалавриат и специалитет)" class="level2" href="/files/2020/%d0%9f%d0%90%d0%9c%d0%af%d0%a2%d0%9a%d0%90_%d0%97%d0%90%d0%9e%d0%a7%d0%9d%d0%98%d0%9a%d0%a3(%d0%b0%d0%b1%d0%b8%d1%82-%d0%b1%d0%b0%d0%ba-%d1%81%d0%bf%d0%b5%d1%86)%202020.pdf?upd">Памятка первокурснику-заочнику 2020 (бакалавриат и специалитет)</a></li><li><a title="Памятка первокурснику заочного обучения на 2020-2021 уч. год (магистратура)" class="level2" href="/files/2020/%d0%9f%d0%90%d0%9c%d0%af%d0%a2%d0%9a%d0%90_%d0%97%d0%90%d0%9e%d0%a7%d0%9d%d0%98%d0%9a%d0%a3(%d0%b0%d0%b1%d0%b8%d1%82-%d0%bc%d0%b0%d0%b3)%202020.pdf?upd">Памятка первокурснику-заочнику 2020 (магистратура)</a></li><li><a title="Памятка первокурснику-очнику 2019 (СПО)" class="level2" href="/files/2019/%d0%9f%d0%b0%d0%bc%d1%8f%d1%82%d0%ba%d0%b0%20%d0%bf%d0%b5%d1%80%d0%b2%d0%be%d0%ba%d1%83%d1%80%d1%81%d0%bd%d0%b8%d0%ba%d1%83-%d0%be%d1%87%d0%bd%d0%b8%d0%ba%d1%83%202019_%d0%a1%d0%9f%d0%9e.pdf">Памятка первокурснику-очнику 2019 (СПО)</a></li><li><a title="Памятка первокурснику заочного обучения на 2020-2021 уч. год (СПО)" class="level2" href="/files/2020/%d0%9f%d0%90%d0%af%d0%9c%d0%af%d0%a2%d0%9a%d0%90%20%d0%97%d0%90%d0%9e%d0%a7%d0%9d%d0%98%d0%9a%d0%a3%20%d0%a1%d0%9f%d0%9e%202020.pdf">Памятка первокурснику-заочнику 2020 (СПО)</a></li><li><a title="Памятка первокурснику очного обучения на 2020-2021 уч. год (аспирантура)" class="level2" href="/files/2020/%d0%9f%d0%b0%d0%bc%d1%8f%d1%82%d0%ba%d0%b0%20%d0%bf%d0%b5%d1%80%d0%b2%d0%be%d0%ba%d1%83%d1%80%d1%81%d0%bd%d0%b8%d0%ba%d1%83-%d0%be%d1%87%d0%bd%d0%b8%d0%ba%d1%83%202020%20(%d0%b0%d1%81%d0%bf%d0%b8%d1%80%d0%b0%d0%bd%d1%82%d1%83%d1%80%d0%b0).pdf">Памятка первокурснику-очнику 2020 (аспирантура)</a></li><li><a title="Памятка первокурснику заочного обучения на 2020-2021 уч. год (аспирантура)" class="level2" href="/files/2020/%d0%9f%d0%b0%d0%bc%d1%8f%d1%82%d0%ba%d0%b0%20%d0%bf%d0%b5%d1%80%d0%b2%d0%be%d0%ba%d1%83%d1%80%d1%81%d0%bd%d0%b8%d0%ba%d1%83-%d0%b7%d0%b0%d0%be%d1%87%d0%bd%d0%b8%d0%ba%d1%83%202020%20(%d0%b0%d1%81%d0%bf%d0%b8%d1%80%d0%b0%d0%bd%d1%82%d1%83%d1%80%d0%b0).pdf?n2">Памятка первокурснику-заочнику 2020 (аспирантура)</a></li><li><a title="Расписание занятий студентов очного обучения бакалавриата и специалитета" class="level2" href="/help/timetable/timetable.aspx">Расписание занятий (очная форма)</a></li><li><a title="Расписание занятий аспирантов очного и заочного обучения" class="level2" href="/help/timetable/timetableasp.aspx">Расписание занятий (аспирантура)</a></li><li><a title="Расписание сессий всех форм обучения" class="level2" href="/help/timetable/session.aspx">Расписание сессий (все формы)</a></li><li><a title="График сессий заочного обучения (бакалавриат, специалитет, магистратура, СПО, аспирантура) на 2020-2021 уч. год (заочное, ускоренное и параллельное обучение)" class="level2" href="/help/timetable/graphic.aspx">График сессий на 2020-2021 уч.год (заочная, очно-заочная формы)</a></li><li><a title="Личный портал студента (авторизованный доступ)" class="level2" href="http://me.bgu.ru/">Личный портал студента</a></li><li><a title="Инструкция пользователя электронными ресурсами" class="level2" href="/files/2017/%d0%98%d0%bd%d1%81%d1%82%d1%80%d1%83%d0%ba%d1%86%d0%b8%d1%8f%20%d0%bf%d0%be%d0%bb%d1%8c%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d1%8f%20%d1%8d%d0%bb%d0%b5%d0%ba%d1%82%d1%80%d0%be%d0%bd%d0%bd%d1%8b%d0%bc%d0%b8%20%d1%80%d0%b5%d1%81%d1%83%d1%80%d1%81%d0%b0%d0%bc%d0%b8.pdf?new">Инструкция пользователя электронными ресурсами</a></li><li><a title="Diploma Supplement - Приложение Европаспорта к диплому о высшем профессиональном образовании" class="level2" href="/student/study/eurodiplom.aspx">Diploma Supplement</a></li><li><a class="level2" href="/student/paral/default.aspx">Параллельное обучение</a></li><li><a class="popout level2" href="/student/lang/">Языковые стажировки</a><ul class="level3">
+				<li><a class="popout level3" href="http://rcf.bgu.ru/Akademicheskaja-mobilqnostq-%E5%AD%A6%E6%9C%AF%E6%B5%81%E5%8A%A8/Jazykovye-stazhirovki-%E8%AF%AD%E8%A8%80%E5%AE%9E%E4%B9%A0">Китайский язык</a><ul class="level4">
+					<li><a title="Институт китайского языка Даляньского университета иностранных языков" class="level4" href="/student/lang/china/dalyan.aspx">г. Далянь</a></li><li><a title="Пекинский университет языка и культуры" class="level4" href="/student/lang/china/pekin.aspx">г. Пекин</a></li><li><a title="Хэнаньский университет экономики и права " class="level4" href="/student/lang/china/chz.aspx">г. Чжэнчжоу</a></li><li><a title="Шеньянский Политехнический Университет " class="level4" href="/student/lang/china/shenyan.aspx">г. Шеньян</a></li><li><a title="Восточно-Китайский Педагогический Университет " class="level4" href="/student/lang/china/shanghai.aspx">г. Шанхай</a></li>
+				</ul></li><li><a class="popout level3" href="/student/lang/franch/">Французский язык</a><ul class="level4">
+					<li><a title="Университет &#39;София Антиполис&#39;" class="level4" href="/student/lang/franch/nice.aspx">г. Ницца</a></li><li><a title="БГУ, остов Ольхон на озере Байкал" class="level4" href="/student/lang/franch/baikal.aspx">г. Иркутск (оз. Байкал)</a></li>
+				</ul></li><li><a class="level3" href="/student/lang/german/">Немецкий язык</a></li>
+			</ul></li><li><a title="Информация о стипендиях, положение о стипендиальном обеспечении и других формах материальной поддержки студентов и аспирантов в ФГБОУ ВО «БГУ», приказы о размере стипендий и надбавок обучающимся" class="level2" href="/sveden/grants/help.aspx">Стипендии</a></li><li><a class="popout level2" href="/student/price/">Цены на обучение</a><ul class="level3">
+				<li><a title="Стоимость обучения на 2020-2021 учебный год" class="level3" href="/sveden/paid_edu/">Приказы о стоимости обучения</a></li><li><a title="Правила оплаты обучения" class="level3" href="/student/price/oplata.aspx">Правила оплаты обучения</a></li><li><a title="Как оплатить через Сбербанк Онлайн" class="level3" href="/student/price/online.aspx">Как оплатить через Сбербанк Онлайн</a></li><li><a title="Как получить налоговый вычет?" class="level3" href="/student/price/nalog.aspx">Как получить налоговый вычет?</a></li>
+			</ul></li><li><a class="popout level2" href="/student/health/">Здоровье</a><ul class="level3">
+				<li><a class="level3" href="/student/health/grip.aspx">Профилактика гриппа</a></li><li><a class="popout level3" href="/student/health/medosm.aspx">Медосмотр</a><ul class="level4">
+					<li><a title="Для студентов 1 курса" class="level4" href="/student/health/mednotice.aspx">Памятка для прохождения медосмотра студентов 1 курса</a></li><li><a title="Для студентов 3 курса" class="level4" href="/student/health/mednotice3.aspx">Памятка для прохождения медосмотра студентов 3 курса</a></li><li><a title="Для несовершеннолетних" class="level4" href="/student/health/mednoticenes.aspx">Памятка для прохождения медицинского осмотра несовершеннолетними</a></li>
+				</ul></li><li><a class="popout level3" href="/student/health/service.aspx">Медицинское обслуживание</a><ul class="level4">
+					<li><a class="level4" href="/student/health/police.aspx">Медицинское страхование</a></li><li><a class="level4" href="/student/health/medpoint.aspx">Здравпункт университета</a></li><li><a class="level4" href="/student/health/hospital.aspx">Студенческая поликлиника</a></li>
+				</ul></li>
+			</ul></li><li><a class="popout level2" href="/student/prevention/">Кабинет профилактики</a><ul class="level3">
+				<li><a class="level3" href="/student/prevention/main.aspx">Общие сведения</a></li><li><a class="level3" href="/student/prevention/regulations.aspx">Нормативно-правовые акты</a></li><li><a class="level3" href="/student/prevention/programs.aspx">Программы</a></li><li><a class="level3" href="/student/prevention/agreement.aspx">Соглашения</a></li><li><a class="level3" href="/student/prevention/plans.aspx">Планы работы</a></li><li><a class="level3" href="/student/prevention/materials.aspx">Информационно-просветительские материалы</a></li><li><a class="level3" href="/student/prevention/contacts.aspx">Контактная информация</a></li><li><a class="level3" href="/student/prevention/pstest.aspx">Социально-психологическое тестирование</a></li>
+			</ul></li><li><a class="level2" href="/student/health/leto_ozd.aspx">Летнее оздоровление</a></li><li><a class="level2" href="/student/voen-u.aspx">О воинской обязанности</a></li><li><a class="popout level2" href="/student/internet/">Интернет</a><ul class="level3">
+				<li><a class="level3" href="/student/internet/iclass.aspx">Интернет-класс</a></li><li><a class="level3" href="/wifi/">WiFi в университете</a></li>
+			</ul></li><li><a class="level2" href="/student/study/diplomrab.aspx">Конкурс выпускных квалификационных работ</a></li><li><a class="level2" href="/sveden/vacant/">Вакантные места для приема(перевода)</a></li><li><a class="level2" href="/documents/%d0%bf%d1%80%d0%b0%d0%b2%d0%b8%d0%bb%d0%b0%20%d0%bf%d1%80%d0%be%d0%bf%d1%83%d1%81%d0%ba%d0%bd%d0%be%d0%b3%d0%be%20%d1%80%d0%b5%d0%b6%d0%b8%d0%bc%d0%b0.pdf">Правила пропускного режима</a></li><li><a class="level2" href="/student/oss/">Объединенный студенческий совет</a></li><li><a class="level2" href="/student/GL.aspx">Горячая линия</a></li><li><a class="level2" href="/student/ob-z.aspx">Образцы заявлений</a></li>
+		</ul></li><li><a class="popout level1" href="/personal/">Работникам</a><ul class="level2">
+			<li><a title="Расписание занятий преподавателей для очной формы обучения" class="level2" href="/help/timetable/pps.aspx">Расписание занятий преподавателей</a></li><li><a title="Предложения партнеров университета" class="popout level2" href="/personal/partners">Предложения партнеров</a><ul class="level3">
+				<li><a title="Информация о зарплатном проекте" class="level3" href="/personal/partners/gazprom.aspx">Газпромбанк</a></li><li><a class="level3" href="/personal/partners/%d0%9c%d0%98%d0%a0_%d1%80%d0%b0%d0%b7%d0%b2%d0%b8%d1%82%d0%b8%d0%b5%20%d0%ba%d0%b0%d1%80%d1%82%d0%be%d1%87%d0%bd%d1%8b%d1%85v3.pdf">Карта «МИР» (Сбербанк)</a></li><li><a class="level3" href="/personal/partners/ipoteka.pdf">Ипотечное кредитование молодых ученых</a></li>
+			</ul></li><li><a title="Инструкции для преподавателей" class="level2" href="/personal/instkv.aspx">Инструкции для преподавателей</a></li><li><a title="Первичная профсоюзная организация БГУ" class="level2" href="http://prafkom.bgu.ru/">Профком</a></li>
+		</ul></li><li><a class="level1" href="http://prof.bgu.ru/">Школьникам</a></li><li><a class="popout level1" href="/student/dormitory/">Общежитие</a><ul class="level2">
+			<li><a class="level2" href="/student/dormitory/prikaz.aspx">Приказ о стоимости проживания в общежитиях</a></li><li><a class="level2" href="/documents/%d0%9f%d1%80%d0%b0%d0%b2%d0%b8%d0%bb%d0%b0%20%d0%b2%d0%bd%d1%83%d1%82%d1%80%d0%b5%d0%bd%d0%bd%d0%b5%d0%b3%d0%be%20%d1%80%d0%b0%d1%81%d0%bf%d0%be%d1%80%d1%8f%d0%b4%d0%ba%d0%b0%20%d1%81%d1%82%d1%83%d0%b4%d0%b5%d0%bd%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b3%d0%be%20%d0%be%d0%b1%d1%89%d0%b5%d0%b6%d0%b8%d1%82%d0%b8%d1%8f%20%d0%bd%d0%be%d0%b2%d0%b0%d1%8f%20%d1%80%d0%b5%d0%b4%d0%b0%d0%ba%d1%86%d0%b8%d1%8f.pdf">Правила внутреннего распорядка в общежитиях</a></li><li><a class="level2" href="/documents/2020/%d0%9f%d1%80%d0%b8%d0%ba%d0%b0%d0%b7%20%d0%b2%d1%80%d0%b8%d0%be%20%d1%80%d0%b5%d0%ba%d1%82%d0%be%d1%80%d0%b0%20%d0%91%d0%93%d0%a3%20%e2%84%96127%20%d0%be%d1%82%2013%20%d0%b0%d0%bf%d1%80%d0%b5%d0%bb%d1%8f%202020%20%d0%9e%20%d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%b5%20%d1%81%d1%82%d1%83%d0%b4%d0%b5%d0%bd%d1%87%d0%b5%d1%81%d0%ba%d0%be%d0%b3%d0%be%20%d0%b3%d0%be%d1%80%d0%be%d0%b4%d0%ba%d0%b0%20%d0%91%d0%93%d0%a3%20%d0%b2%20%d1%80%d0%b5%d0%b6%d0%b8%d0%bc%d0%b5%20%d1%81%d0%b0%d0%bc%d0%be%d0%b8%d0%b7%d0%be%d0%bb%d1%8f%d1%86%d0%b8%d0%b8.pdf">Приказ о работе студенческого городка БГУ в режиме самоизоляции </a></li><li><a class="level2" href="/documents/2018/%d0%9f%d0%be%d0%bb%d0%be%d0%b6%d0%b5%d0%bd%d0%b8%d0%b5%20%d0%be%20%d1%81%d1%82%d1%83%d0%b4%d0%b3%d0%be%d1%80%d0%be%d0%b4%d0%ba%d0%b5%20%d0%91%d0%93%d0%a3.pdf?l1">Положение о студгородке Байкальского университета</a></li><li><a class="level2" href="/student/dormitory/if.aspx">Условия предоставления места в общежитии</a></li><li><a class="level2" href="/student/dormitory/abitur.aspx">Заселение первокурсников в общежития на 2020/2021 учебный год.</a></li><li><a class="popout level2" href="/student/dormitory/dormitory.aspx">Общежития студгородка</a><ul class="level3">
+				<li><a class="level3" href="/student/dormitory/n1.aspx">Общежитие №1</a></li><li><a class="level3" href="/student/dormitory/n2.aspx">Общежитие №2</a></li><li><a class="level3" href="/student/dormitory/n3.aspx">Общежитие №3</a></li><li><a class="level3" href="/student/dormitory/n5.aspx">Общежитие №5</a></li>
+			</ul></li><li><a title="Регламент студгородка (заселение, выселение, проживание в летний период и праздничные дни)" class="popout level2" href="/student/dormitory/reglament.aspx">Регламент студгородка</a><ul class="level3">
+				<li><a title="Регламент заселения в общежития" class="popout level3" href="/student/dormitory/reglament-in.aspx">Заселение</a><ul class="level4">
+					<li><a title="Регламент заселения в общежития студентов очной формы обучения" class="level4" href="/student/dormitory/files/2019/%d1%80%d0%b5%d0%b3%d0%bb%d0%b0%d0%bc%d0%b5%d0%bd%d1%82%20%d0%b7%d0%b0%d1%81%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d1%8f%20%d1%83%d1%87%d0%b0%d1%89%d0%b8%d1%85%d1%81%d1%8f%20pdf.pdf">Очное обучение</a></li><li><a title="Регламент заселения в общежития студентов заочной, зачоной в сокращенные сроки форм обучения" class="level4" href="/student/dormitory/files/2019/%d1%80%d0%b5%d0%b3%d0%bb%d0%b0%d0%bc%d0%b5%d0%bd%d1%82%20%d0%b7%d0%b0%d1%81%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d1%8f%20%d0%b7%d0%b0%d0%be%d1%87%d0%bd%d0%b8%d0%ba%d0%be%d0%b2%20pdf.pdf">Заочная, в сокращенные сроки обучение</a></li>
+				</ul></li><li><a title="Регламент выселения из общежития" class="level3" href="/student/dormitory/files/2019/%d1%80%d0%b5%d0%b3%d0%bb%d0%b0%d0%bc%d0%b5%d0%bd%d1%82%20%d0%b2%d1%8b%d1%81%d0%b5%d0%bb%d0%b5%d0%bd%d0%b8%d1%8f%20%d1%83%d1%87%d0%b0%d1%89%d0%b8%d1%85%d1%81%d1%8f%20pdf.pdf">Выселение учащихся</a></li><li><a title="Регламент проживания  в новогодние каникулы с 30 декабря по 8 января
+
+" class="level3" href="/student/dormitory/files/ng_2018-19%20pdf.pdf?new">Новогодние каникулы</a></li>
+			</ul></li><li><a class="level2" href="/student/dormitory/blanks.aspx">Бланки документов</a></li>
+		</ul></li><li><a class="popout level1" href="/job/">Трудоустройство</a><ul class="level2">
+			<li><a title="Регинальный центр содействия трудоустройству выпускников" class="level2" href="http://rabota.bgu.ru/">Центр трудоустройства</a></li><li><a title="Выборы деканов и зав. кафедрами" class="level2" href="/files/2021/%d0%92%d1%8b%d0%b1%d0%be%d1%80%d1%8b_30_%d0%b0%d0%bf%d1%80%d0%b5%d0%bb%d1%8f_2021_%d0%b3.pdf">Выборы деканов и зав. кафедрами</a></li><li><a title="Объявления о конкурсном отборе на замещение вакансий профессорско-преподавательского состава БГУ" class="level2" href="/job/pps.aspx">Конкурс преподавателей</a></li>
+		</ul></li><li><a class="level1" href="/edu-portal/">Электронный университет</a></li><li><a class="level1" href="/zakupki.aspx">Закупки</a></li><li><a class="level1" href="/map.aspx">Карта сайта</a></li><li><a class="level1" href="/educationRes/">Образовательные ресурсы</a></li><li><a class="popout level1" href="http://minobrnauki.gov.ru/">Минобрнауки России</a><ul class="level2">
+			<li><a class="level2" href="/minobr/">Управление кампусами</a></li><li><a class="level2" href="/minobr/opk.aspx">Программа «Новые кадры ОПК»</a></li>
+		</ul></li><li><a title="Выборы ректора Байкальского государственного университета в 2020 году" class="level1" href="/vibory_rectora/">Выборы ректора</a></li><li><a class="level1" href="/anticorr/">Профилактика коррупции в БГУ</a></li>
+	</ul>
+</div><a id="MenuLeft_SkipLink"></a>
+                    <p>
+                        <a href="/sveden/struct/finance.aspx" style="color:#444;display:block;text-align:center;font-size:8pt;">Сведения о доходах, об имуществе и обязательствах имущественного характера руководителей и членов
+                            их семей</a>
+                    </p>
+                    <p>
+                        <a href="/files/2019/СКАН о ср.зар.пл. руков..pdf" style="color:#444;display:block;text-align:center;font-size:8pt;">Среднемесячная заработная плата ректора, проректоров, главного бухгалтера</a>
+                    </p>
+                  
+                    <div style=" text-align:center; padding:5px 5px; ">
+                        <a href="http://irk-olimp.ru/" target="_blank">
+                            <img src="/images/zfs.png" alt="Олимпиада школьников Золотой фонд Сибири" style=" border:0; width:200px; border:1px solid #cccccc;"
+                            />
+                        </a>
+                    </div>  
+                     <div style=" text-align:center; padding:5px 5px; ">
+                        <a href="http://bgu.ru/worldskills/" target="_blank">
+                            <img src="/img\2020/wsr.jpg" alt="WorldSkills Russia" style=" border:0; width:200px; border:1px solid #cccccc;"
+                            />
+                        </a>
+                    </div>  
+                    <div style=" text-align:center; padding:5px 5px; background:#ffffff; border:1px solid #cccccc; margin:16px; ">
+                        <a href="/abilimpiks/" target="_blank">
+                            <img src="/abilimpiks/img/logo.png" alt="Абилимпикс" style=" border:0; " />
+                        </a>
+                    </div> 
+                    
+                    <div style=" text-align:center;">
+                        <a href="http://cinema.bgu.ru/" target="_blank">
+                            <img src="/img/logo-xud.png" alt="СКДЦ Художественный БГУ" style=" border:1px red none;width:200px;"
+                            />
+                        </a>
+                    </div>
+   
+                    <div style=" text-align:center; padding:5px 5px; ">
+                        <a href="http://lawclinik.bgu.ru/" target="_blank">
+                            <img src="http://bgu.ru/img/banner/2018/clinic.jpg" alt="БГУ - Юридическая клиника Юридического института БГУ"
+                                style=" border:0;" />
+                        </a>
+                    </div>
+                    <div style=" text-align:center; padding:5px 5px;  display:none;">
+                        <a href="http://ema3-scee.bgu.ru" target="_blank">
+                            <img src="http://bgu.ru/img/banner/scee.jpg" alt="БГУ - сибирский центр европейского образования"
+                                style=" border:0;" />
+                        </a>
+                    </div>
+                    <div style=" text-align:center; padding:5px 5px; ">
+                        <a href="http://prafkom.bgu.ru/" target="_blank">
+                            <img src="http://bgu.ru/img/banner/profkom.jpg" alt="БГУ - первичная профсоюзная организация" style=" border:0;"
+                            />
+                        </a>
+                    </div>
+                    
+                 
+                  
+                </div>
+                <div id="main">
+                    
+                    
+
+    <div style="font-size:1.15em;">
+        <h3 style="text-align:center;font-weight: bold;">Вход в университет разрешен только в медицинских масках!!!</h3>
+        <!--<hr />
+       <p style="text-align:center;"><span style="color:#1c94bd;">Банк ВТБ выпустил банковские карты для студентов 2 курса, обучающихся на бюджетной основе. </span></p> 
+<p style="text-align:center;">Выдача банковских карт состоится 29, 30, 31 марта 2021 года в аудитории 4-105 с 11.00 до 15.00.<b style="color:#ff6600"> При себе иметь паспорт. </b></p>
+ <p style="text-align:center;"><b>18, 19 марта</b> (четверг, пятница) - <b>с 10.00 до 17.30</b><br>
+<b>22 марта</b> (понедельник) <b>- с 10.00 до 14.00</b><br>
+<b>23 марта</b> (вторник)<b> - с 14.00 до 17.30</b></p>-->
+
+
+
+        
+        <hr />
+
+  <div             style="border:1px solid #fff; padding:5px 15px; border-radius:10px; width:350px;float:right; ">
+
+            <h1 style=" text-align:center; margin-top:10px;">БГУ 90 лет!</h1>
+            <p style="text-align:center;"><a href="90/"><img src="/90/files/90.jpg"
+                        style="width:150px; margin-right:20px;" /></a><a href="http://www.investbgu.ru/vr2/"
+                    target="_blank"><img src="/img/vtour.jpg" style="width:150px;" /></a></p>
+
+
+
+
+        </div>
+
+    <h2>Как учимся</h2>
+    <p>Студенты <span style="color:maroon;">очной и очно-заочной форм обучения</span> - личное присутствие в Университете.</p>
+        <p>Студенты <span style="color:maroon;">заочной формы обучения</span> - <b>дистанционно</b> (<a href="http://bgu.ru/student/health/koronavir_distant.aspx">подробнее</a>).</p>
+        <h2>Дополнительно</h2>
+        <p><a href="http://bgu.ru/student/ob-z.aspx">Образцы заявлений</a> (для студентов и выпускников)</p>
+         <!--<p>Уважаемые студенты! Опубликованы <a href="http://bgu.ru/about/files/Расписание повторной промежуточной аттестации .pdf?l4">графики</a> проведения повторной промежуточной аттестации (ликвидации академической задолженности) в период с 22.03.2021 по 27.03.21 </p>-->
+       
+        <div style="clear:right;"></div>
+
+
+
+
+    
+    <div
+    style=" padding:0 0; margin-top:20px;margin-bottom:20px; font-size:1.15em; margin-top:0;  padding:20px; border:1px solid #ff6600; border-radius:10px;">
+    <table class="noborder" style="margin:0 0;">
+        <tr>
+            <td colspan="2">
+                <h2 style="margin-top:0; text-align:center;">Подготовка к поступлению 2021</h2>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                
+                <p><span style="color:#1c94bd;">1 марта 2021г.</span> опубликована информация о приеме в 2021 году на образовательные программы среднего профессионального образования (Колледж) (<a href="http://bgu.ru/abitur/spo/">см. здесь</a>).</p>
+            </td>
+        </tr>
+        <tr style="vertical-align:top;">
+
+            <td style="text-align:center;">
+                <!--<div style="margin-left:0px; margin-top:7px;">
+        <a href="https://www.youtube.com/channel/UCFXEprFr00VWj8dD8581G6A/feed"
+            target="_blank"><img src="/img/2020/dod1.jpg" style="border:#fff 1px solid; border-radius:15px;width:100%;" /></a>
+
+
+
+    </div>-->
+
+                <!-- <h4 style="color:#2E7CBB; margin-top:1px;">Не можете определиться с
+                        профессией?</h4> -->
+                <br />
+                <a href="http://prof.bgu.ru/profession/proftest.aspx"><img style="border:1px solid #006699;"
+                        src="img/2020/Banner_Prof.jpg" alt="Не можете определиться с профессией?"
+                        title="Не можете определиться с профессией?"></a>
+                        <br/> 
+                        <br/> 
+                <!-- <a href="http://prof.bgu.ru/profession/saturday.aspx"><img style="border:1px solid #006699;"
+                    src="img/2020/universub.jpg" alt="Университетские субботы в Байкальском государственном университете"></a>   -->
+                <!-- <br/> <p><a
+                            href="http://prof.bgu.ru/profession/proftest.aspx"
+                            target="_blank"  style="background:#164676; color:#ffffff; padding:10px 25px; border-radius:20px; text-decoration:none;">Вам сюда!</a></p> 
+                        <br/> 
+                        <br/> -->
+                        <a href="https://www.youtube.com/c/Байкальскийгосуниверситет"><img style="border:1px solid #006699;"
+                                src="img/2021/dod_vo_2.jpg" alt="Дни открытых дверей высшего образования в online-формате"
+                                title="Дни открытых дверей высшего образования высшего образования в online-формате"></a>
+            </td>
+            <td style="text-align:center; width:50%; padding-left:20px;">
+                <br />
+                <!-- <a href="http://prof.bgu.ru/training/ege.aspx"><img style="border:1px solid #006699;"
+                        src="img/2020/Banner_EGE.JPG" alt="Курсы подготовки к ЕГЭ и ОГЭ"
+                        title="Курсы подготовки к ЕГЭ и ОГЭ"></a> 
+                        
+                        <br/> 
+                        <br/> -->
+                <a href="http://prof.bgu.ru/files/2020/%D0%9A%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D1%8C %D0%BF%D1%80%D0%BE%D1%84%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85 %D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B9.docx?l1"><img style="border:1px solid #006699;"
+                    src="img/2020/calendar.jpg" alt="Календарь мероприятий Байкальского государственного университета"
+                    title="Календарь мероприятий Байкальского государственного университета"></a>
+                <!-- <p style="text-align:left;color:#ff6600; padding:0; margin:0; margin-top:15px;">Слушателям подготовительных курсов!</p>
+<p style="text-align:left;">Возобновляются подготовительные курсы к ЕГЭ по обществознанию в режиме онлайн.
+Расписание остается прежним, среда с 17:00 до 20:00
+Занятия проводит кандидат экономических наук, доцент кафедры экономики предприятия и предпринимательской деятельности, Шавкунова Ирина Сергеевна, педагогический опыт более 20 лет.
+</p>
+<p style="text-align:left;">Занятия для школьников по русскому возобновятся с 27 ноября в онлайн-формате. Ваш преподаватель Мальцева Наталья Николаевна – член экспертной комиссии ЕГЭ, преподаватель с более чем 40-м стажем работы. Вы получите подготовку не только к ЕГЭ, но и к итоговому сочинению. </p>
+<p style="text-align:left; display:none;">Все часы (занятия) будут восстановлены в течение учебного года. 
+</p>
+                   <a href="/files/2020/Курсы подготовки.pdf">
+                    <img src="/img/2020/kpke-noframe.jpg" style="max-width: 150px; margin-top:20px; float:left;" />
+                </a><br /> -->
+                        <br/> 
+                        <br/> 
+                        <a href="https://www.youtube.com/c/Байкальскийгосуниверситет"><img style="border:1px solid #006699;"
+                                src="img/2021/dod_spo.jpg?new" alt="Дни открытых дверей СПО в online-формате"
+                                title="Дни открытых дверей СПО в online-формате"></a>
+            </td>
+        </tr>
+    <!--    <tr>
+            <td colspan="2" style="text-align: center;">
+                <p style="color:#ff6600;margin-top:15px;">Слушателям подготовительных курсов!</p>
+                <p>Возобновляются подготовительные курсы к ЕГЭ по обществознанию в режиме онлайн.<br />
+Расписание остается прежним, среда с 17:00 до 20:00<br />
+Занятия проводит кандидат экономических наук, доцент кафедры экономики предприятия и предпринимательской деятельности, Шавкунова Ирина Сергеевна, педагогический опыт более 20 лет.
+</p>
+            </td>
+        </tr>-->
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <h4 style="color:#2E7CBB;margin-top:15px;">Есть вопросы?</h4>
+                <p>Закажите
+                    БЕСПЛАТНЫЙ звонок специалиста приемной комиссии.</p>
+                <p style="text-align:center;padding-top:10px;"><a href="http://bgu.ru/abitur/calltome.aspx"
+                        target="_blank"
+                        style="background:#1c94bd; color:#ffffff; padding:10px 25px; border-radius:20px; text-decoration:none;">Заказать</a>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+
+
+    <div style="width:50%; float:right;  margin-left:20px; margin-top:10px;display:none;">
+        <a style="display:none;" href="https://www.youtube.com/channel/UCUd29fLgPUIuDxmI7D6wnsw"
+            target="_blank"><img src="/img/zfs-s.jpg" style="border:#164676 1px solid; border-radius:10px;" /></a>
+
+    </div>
+
+</div>
+
+
+
+        
+        <div style="border:2px #164676 solid;">
+            
+      <a href="http://grantipk.bgu.ru/"><img
+            src='http://bgu.ru/img/2020/ipk-ok.jpg' style="width:100%;" /></a>
+    <p style=" padding: 10px 20px;">Узнать больше информации и записаться на программы повышения квалификации,
+        реализуемые в рамках федерального проекта "Новые возможности для каждого", вы можете на сайте <a
+            href="http://grantipk.bgu.ru/">http://grantipk.bgu.ru/</a>.</p>
+
+            
+
+</div>
+
+
+
+
+        <div
+            style="border:1px solid #ff6600; padding:5px 15px; border-radius:10px; margin-top:20px;margin-bottom:20px; display:none;">
+            <h2 style="color:#ff6600; padding:0; margin:0; margin-top:15px;">Студентам, обучающимся в дистанционном режиме</h2>
+            <p><b>Студенты всех курсов заочной формы  обучаются в дистанционном режиме.</b></p>
+            <p>Для обучения вам необходимо скачать и установить на ваш компьютер или телефон приложение Microsoft Teams.
+                Инструкция <a
+                    href="http://bgu.ru/help/timetable/files/Инструкция%20для%20студентов%20по%20работе%20в%20Microsoft%20Teams.docx">по
+                    работе в Microsoft Teams</a>.</p>
+            <p>По вопросам обучения в дистанционной форме обращаться по <a
+                    href="http://bgu.ru/help/phonebook.aspx">телефонам дирекций институтов</a>. <br /><br />По вопросам
+                работы в
+                приложении Microsoft Teams можно обращаться по телефону 5-0000-8 добавочный 000.</p>
+                
+            С целью сохранения вашего здоровья, в период обучения в дистанционном режиме, бланки заявлений вы
+            можете найти в <a href="http://bgu.ru/student/ob-z.aspx">разделе «образцы заявлений».</a>
+        </div>
+    </div>
+
+ 
+    <hr style="margin-bottom:1px; margin-top:25px;" />
+
+    <div class="divright" style="margin-top:11px;">
+        <div>
+            <h1 style=" margin:0 0; padding:0 0;">Прием 2020</h1><br />
+            <p style="margin:0 0;">Приказы о зачислении</p>
+
+            <ul>
+                <li><a href="http://bgu.ru/abitur/spo/prikaz.aspx">Среднее профессиональное образование
+                        (колледж)</a></li>
+                <li><a href="http://bgu.ru/abitur/bach/prikaz.aspx">Бакалавриат и специалитет</a></li>
+                <li><a href="http://bgu.ru/abitur/mag/prikaz.aspx">Магистратура</a></li>
+                <li><a href="http://bgu.ru/abitur/asp/prikaz.aspx">Аспирантура</a></li>
+            </ul>
+        </div>
+        <h1>Студентам</h1>
+        <div class=" bgCyan padding">Очникам</div>
+        
+        
+                <div class="headerborder">Сегодня
+                    <br />
+                    4 апреля 2021 г.
+                </div>
+            
+                <div class="border">
+                    <span
+                        style='display:block; background:#164676; color:#ffffff; padding:3px; width:calc(100% + 6px); margin-left: -6px; margin-top:-6px; margin-bottom:5px;'>
+                        Высшее образование
+                    </span>
+                    2 семестр
+                    <br />
+                    <b>
+                        Неделя нечетная
+                    </b>
+                    <a id="MainContent_Rweek_HLrasp_0" href="/help/timetable/timetable.aspx">
+                        <br />см. расписание занятий</a>
+                    
+                </div>
+            
+                <div class="border">
+                    <span
+                        style='display:block; background:#164676; color:#ffffff; padding:3px; width:calc(100% + 6px); margin-left: -6px; margin-top:-6px; margin-bottom:5px;'>
+                        Среднее профессиональное образование
+                    </span>
+                    2 ceместр
+                    <br />
+                    <b>
+                        Неделя нечетная
+                    </b>
+                    <a id="MainContent_Rweek_HLrasp_1" href="/help/timetable/timetable.aspx">
+                        <br />см. расписание занятий</a>
+                    
+                </div>
+            
+        <div class=" bgCyan padding" style="margin-top:20px;">Заочникам</div>
+        <div class="border" style="margin:0 0 0 0; padding:0 0 0 0;">
+            <span id="MainContent_Lzao"><table class='noborder' style='text-align:center; margin: 0 auto;  '><tr><th style='color:white; background:#164676; padding:3px;border:1px solid #164676;' colspan=2>Бакалавриат</th></tr><tr><th style='color:#164676;padding:5px;' colspan=2><b>05.04.2021</b><br /> начнутся занятия у групп  (<b style='color:#ff6600;'>дистанционно</b>):</th></tr><tr style='background:#ffffff; text-align:left;'><td style='padding:3px 5px;'>ЗП-18</td><td style='padding:3px 5px;'>ЗРС-18</td></tr><tr style='background:#ffffff; text-align:left;'><td style='padding:3px 5px;'>ЗБ-18</td><td style='padding:3px 5px;'>ЗБ дист-18</td></tr><tr style='background:#ffffff; text-align:left;'><td style='padding:3px 5px;'>ЗНГК-18</td><td style='padding:3px 5px;'>ЗПД-18</td></tr><tr style='background:#ffffff; text-align:left;'><td style='padding:3px 5px;'>ЗПД дист-18</td><td style='padding:3px 5px;'>ЗС-18</td></tr><tr style='background:#ffffff; text-align:left;'><td style='padding:3px 5px;'>ЗФ-18</td><td style='padding:3px 5px;'>ЗЭРБ-18</td></tr><tr style='background:#ffffff; text-align:left;'><td style='padding:3px 5px;'>ЗТБ-18</td><td style='padding:3px 5px;'>ЗСтр-18</td></tr><tr style='background:#ffffff; text-align:left;'><td style='padding:3px 5px;'>ЗУП-18-1</td><td style='padding:3px 5px;'>ЗМ-18</td></tr><tr style='background:#ffffff; text-align:left;'><td style='padding:3px 5px;'>ЗМ дист-18</td><td style='padding:3px 5px;'>ЗИС-18</td></tr><tr style='background:#ffffff; text-align:left;'><td style='padding:3px 5px;'>ЗГМУ-18</td><td style='padding:3px 5px;'>ЗТ-18</td></tr><tr style='background:#ffffff; text-align:left;'><td style='padding:3px 5px;'>зЗемК-18</td><td style='padding:3px 5px;'>ЗИГН-18-1</td></tr></table><table class='noborder' style='text-align:center; margin: 0 auto;  '><tr><th style='color:white; background:#164676; padding:3px;border:1px solid #164676;' colspan=2>Специалитет</th></tr><tr><th style='color:#164676;padding:5px;' colspan=2><b>05.04.2021</b><br /> начнутся занятия у групп  (<b style='color:#ff6600;'>дистанционно</b>):</th></tr><tr style='background:#ffffff; text-align:left;'><td style='padding:3px 5px;'>ЗНБ-18-1</td><td style='padding:3px 5px;'>ЗНБ-18-2</td></tr><tr style='background:#ffffff; text-align:left;'><td style='padding:3px 5px;'>ЗНБ-18-3</td><td style='padding:3px 5px;'>ЗНБ-18-4</td></tr><tr style='background:#ffffff; text-align:left;'><td style='padding:3px 5px;'>ЗНБ-18-5</td><td style='padding:3px 5px;'>ЗЭБ-18-1</td></tr><tr style='background:#ffffff; text-align:left;'><td style='padding:3px 5px;'>ЗТД-18-1</td><td style='padding:3px 5px;'>ЗТД-18-2</td></tr></table></span>
+        </div>
+        <div style="text-align:center; padding:0;  border-radius:10px; margin-top:20px;  display:none;">
+            <a href="http://bgu.ru/rmc/salon2020/" target="_blank"
+                style=" background:#ffffff; border:1px solid #cccccc; display:inline-block; width:220px; color:#164676;  font-size:1.15em; text-decoration:none;">
+                <img src="http://bgu.ru/rmc/salon2020/images/flags.jpg"
+                    alt="Второй Сибирско-Французский салон высшего образования 2020" style=" border:0; width:220px; " />
+                <br />II Сибирско-Французский<br /> Салон <br />высшего образования <br />2020
+            </a>
+        </div>
+
+        <div style="width:220px; ">
+            <div style="margin-top:25px;margin-bottom:10px;display:none;">
+                <a href="http://bgu.ru/science/journals.aspx" class="stylish-button-def"
+                    style="height:38px; width:205px;padding:6px 5px">Научные
+                    журналы
+                    <br /> Байкальского госуниверситета</a>
+            </div>
+            <div style="margin-bottom:15px; margin-top:15px;">
+                <a class="stylish-button-def" href="/massmedia/gazeta/" style="height:38px;width:205px;padding:6px 5px">
+                    <span>Газета
+                        <br>"Байкальский госуниверситет"</span>
+                </a>
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+        <!-- <div style="margin-top:5px;border:1px solid rgb(216, 216, 216); padding: 10px;">
+            <a href="http://prof.bgu.ru/profession/ticket.aspx">
+                <img style="border:0px solid #2E7CBB; width:100%;" src="/img/2020/BvB.jpg" alt="«Билет в будущее»">
+            </a>
+        </div> -->
+
+
+
+
+        <div
+            style="overflow:hidden;margin-top:8px; padding:5px; border:1px solid rgb(216, 216, 216); text-align:center;margin-bottom:10px; display:none;">
+            <a href="/about/inclusive/">
+                <img src="/img/ovz.jpg" alt="Инклюзивное образование в БГУ" id="inclusive-box" />
+            </a>
+        </div>
+
+     
+
+        <div style="border:1px solid #cccccc; padding:0px 10px; margin-top:10px; display:none;">
+            <h2>Кампусные карты</h2>
+            <br />
+            <img src="img/2016/KK.jpg" alt="Кампусные карты БГУ" style="width:200px; display:block;">
+            <p>Выдача кампусных карт обучающимся 1 курса очной формы обучения для бакалавриата, специалитета,
+                магистратуры осуществляется согласно дате получения в личном кабинете «Сбербанк Онлайн».</p>
+
+            <p>Получить карту можно по адресу:<br />
+                г. Иркутск ул. Дзержинского, д. 1<br /> с 9.30 до 18.30, суббота, воскресенье выходной
+            </p>
+
+            <br />
+            <br />
+        </div>
+        <div style="border:1px solid #cccccc; padding:0px 10px; margin-top:10px; display:none;">
+            <h2>Кампусные карты</h2>
+            <img src="img/2016/KK.jpg" alt="Кампусные карты БГУ" style="width:200px; display:block;">
+            <p>Данные на 28.12.2017
+                <br />
+                <a href="/files/2017/Информация_по_кампусным_картам_-_учащиеся.xlsx">Для учащихся</a>
+                <br>
+                <a href="/files/2017/Информация_по_кампусным_картам_-_сотрудники.xlsx">Для сотрудников</a>
+            </p>
+            <p>Выпущенные КК можно получить на Лапина, 1.
+                <br>Отделение Сбербанка работает с 8.30 до 19.00 в будние дни
+                <br />с 9.00 до 16.00 по субботам. </p>
+            <p style="color:maroon;">Студенты-бюджетники получают карту МИР. Кроме того, для них позже будет выпущена
+                и кампусная карта. Если Вам выдали карту другого типа (не МИР, не КК), сообщите номер карты и номер
+                счёта
+                Цимбалисту К.А. Иначе с карты за обслуживание будут списываться деньги.
+                <br />Активировать КК надо в отделе пропусков (корпус 4, слева от входа)</p>
+            <a href="#">
+                <span class="sectionShowHide moreKK" id="KK">Дополнительная информация</span>
+            </a>
+            <div class="hideSection sectionKK" style="width:100%">
+                <p>Информация для тех, у кого истекает срок действия КК:
+                    <br />Если в последние 6 месяцев никаких действий с КК не производилось (зачисление и списание
+                    средств
+                    и т.п.), то автоматически новая карта выпущена НЕ БУДЕТ.
+                    <br />В таком случае при необходимости выпуска новой КК обратитесь к Цимбалисту К.А.</p>
+                <p>Для получения КК надо на Лапина 1 взять талон на выдачу карты, предъявить паспорт и подписать
+                    заявление.
+                    <br /> Лица, у которых возникла ошибка при открытии счёта из-за рассогласования данных, должны
+                    сначала
+                    проверить, верна ли информация (ФИО, дата рождения, серия/номер/дата выпуска паспорта) в база данных
+                    БГУ (учащимся обращаться в деканат, сотрудникам – в отдел кадров).
+                    <br /> Если была ошибка, исправить и сообщить об этом в отдел АСУ, Цимбалисту К.А., телефон 275,
+                    для повторной отправки информации.
+                    <br /> Если данные в базе верны, обратиться в любое подразделение СБ (предпочтительно на Лапина,
+                    1), к сотрудникам, обслуживающим частных лиц и сообщить об ошибке. При себе иметь паспорт. После
+                    исправления ошибки сообщить Цимбалисту К.А.
+                    <br /> Если в случае утраты или по иной причине необходим перевыпуск КК, следует так же обратиться
+                    к Цимбалисту К.А.
+                    <br />
+                    <b>Если у Вас истек срок действия карты или изменилась фамилия, обратитесь в отделение
+                        Сбербанка.</b>
+                </p>
+            </div>
+        </div>
+       
+        <!-- <div style="margin-top:20px;">
+            <a href="http://prof.bgu.ru/profession/proftest.aspx">
+                <img style="border:1px solid #2E7CBB; width:100%;" src="img/2017/prof_test.jpg" alt="Профориентация">
+            </a>
+        </div> -->
+        
+        <div style="margin-top:20px;">
+            <a href="https://www.minobrnauki.gov.ru/god-nauki/">
+                <img style="border:1px solid #2E7CBB;" src="img/2021/scienceyear.jpg"
+                    alt="Год науки в Российской Федерации">
+            </a>
+        </div>
+
+         <div style="margin-top:20px;">
+        <a href="https://logistic210101.turbo.site/page540057"><img
+            src='http://bgu.ru/img/2021/log.jpg' style="width:220px; border:1px solid #cccccc;" /></a>
+        </div>
+
+        <div style="margin-top:20px;">
+            <a href="http://ipk.bgu.ru/Content/centerAbout/52">
+                <img style="border:1px solid #2E7CBB;" src="img/2016/langb_1.jpg"
+                    alt="Иностранные языки для детей и взрослых">
+            </a>
+        </div>
+
+
+        <div style="margin-top:20px;">
+            <a href="http://ipk.bgu.ru/Program/About/2808">
+                <img style="border:1px solid #2E7CBB;width:100%;" src="img/2018/sd.jpg" alt="Сметное дело">
+            </a>
+        </div>
+
+
+        
+        
+
+        <!--------------------->
+
+        <div style="margin-top:10px;">
+            <a href="http://openbudget.gfu.ru/" target="_blank"
+                title="Открытый бюджет Иркутской областию Портал для граждан">
+                <img style="border:1px solid #ddd" src="/img/banner/fin.jpg"
+                    alt="Открытый бюджет Иркутской областию Портал для граждан" />
+            </a>
+        </div>
+        <div style="margin-top:10px;">
+            <a href="http://bgu.ru/antiterror/">
+                <img style="border:1px solid #ddd" src="/img/banner/antiterror.jpg"
+                    alt="Противодействие проявлениям терроризма и экстремизма" />
+            </a>
+        </div>
+        <div style="margin-top:10px;">
+            <a href="https://map.ncpti.ru/">
+                <img style="border:1px solid #ddd; width:220px;" src="/img/banner/map_ncpti_banner.png"
+                    alt="Интерактивная карта антитеррористической деятельности в образовательных  рганизациях и научных учреждениях Российской Федерации" />
+            </a>
+        </div>
+        <div style="margin-top:10px;">
+            <a href="https://www.oprf.ru/1449/2134/2412/2413/">
+                <img style="border:1px solid #ddd; width:100%;" src="/img/banner/banner_terror27112015.jpg"
+                    alt="Выявление пропаганды терроризма, межнациональной ненависти и вражды" />
+            </a>
+        </div>
+        <div style="margin-top:10px;">
+            <a href="/files/БРОШЮРА-Персональные_данные.pdf">
+                <img style="border:1px solid #ddd; width:100%;" src="/img/banner/pd.jpg"
+                    alt="Брошюра о защите персональных данных" />
+            </a>
+        </div>
+        <div style="margin-top:10px;">
+            <a href="http://mmp38.ru/" target="blank">
+                <img style="width:100%;" src="/img/banner/mmp38.png"
+                    alt="Министерство по молодежной политике Иркутской области" />
+            </a>
+        </div>
+
+
+    </div>
+
+
+
+
+    
+    
+            <h1>Новости</h1>
+            <table class="news" style="width:610px;">
+                
+            <tr id="MainContent_LVnews_topnews_0">
+	<td class="bgblue">Важная информация</td>
+</tr>
+
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl0$HFcat" id="MainContent_LVnews_HFcat_0" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            2 апреля 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Студент БГУ стал призером Всероссийского рэп-фестиваля
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7467&n=1&m=1'
+                        rel="lightbox-bl7467">
+                        <img src='/news/getPicture.aspx?id=7467' alt="Студент БГУ стал призером Всероссийского рэп-фестиваля"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        
+<P>В концертном зале главного управления МВД по Иркутской области 31 марта 2021 
+года состоялся I Всероссийский фестиваль патриотического рэпа, организованный 
+управлением Федерального казначейства Иркутской области. Студент Института 
+управления и финансов Байкальского университета, солист вокального ансамбля 
+«Нота-бене» Центра творчества Алексей Кочетов очень достойно представил наш вуз 
+и занял 2 место. Алексей исполнил композицию собственного сочинения «Мой 
+Иркутск». Помимо Алексея в номере на бэк-вокале принимали участие также студенты 
+нашего университета: Иннокентий Олзоев, Кристина Бархатова, Валерия Арефьева, 
+Ксения Домашевская.</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7467'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl1$HFcat" id="MainContent_LVnews_HFcat_1" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            2 апреля 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Прими участие в интеллектуальной игре «Pgo Game»
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7468&n=1&m=1'
+                        rel="lightbox-bl7468">
+                        <img src='/news/getPicture.aspx?id=7468' alt="Прими участие в интеллектуальной игре «Pgo Game»"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        
+<P>Профком студентов БГУ приглашает принять участие в интеллектуальной игре «Pro 
+Game», которая состоится 2 апреля в 17.30 в кафе «Грот». Ее участником может 
+стать любой студент БГУ. Цель мероприятия – вовлечь студентов во внеучебную 
+деятельность и укрепить социальные связи между ними, а также раскрыть их 
+личностный потенциал и совершенствовать интеллектуальную 
+культуру.</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7468'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl2$HFcat" id="MainContent_LVnews_HFcat_2" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            2 апреля 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            В БГУ прошла ежегодная международная конференция
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7469&n=1&m=1'
+                        rel="lightbox-bl7469">
+                        <img src='/news/getPicture.aspx?id=7469' alt="В БГУ прошла ежегодная международная конференция"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        
+<P>Ежегодная международная студенческая научно-практическая конференция «Россия 
+и страны АТР: диалог культур (традиции и современность) состоялась в Байкальском 
+государственном университете. В ней приняли участие более 60 студентов из вузов 
+Иркутска (БГУ, ИФИЯМ ИГУ, МИЭЛ ИГУ) и Читы (ЗабГУ).</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7469'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl3$HFcat" id="MainContent_LVnews_HFcat_3" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            2 апреля 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Молодые ученые БГУ могут принять участие в конкурсе Российской инженерной академии 
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7470&n=1&m=1'
+                        rel="lightbox-bl7470">
+                        <img src='/news/getPicture.aspx?id=7470' alt="Молодые ученые БГУ могут принять участие в конкурсе Российской инженерной академии "
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        
+<P>Российская инженерная академия объявляет о проведении Всероссийского конкурса 
+научно-исследовательских работ «Молодой ученый» имени первопечатника Ивана 
+Федорова.</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7470'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl4$HFcat" id="MainContent_LVnews_HFcat_4" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            2 апреля 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Братский филиал Байкальского государственного университета отметил свое 20-летие
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7471&n=1&m=1'
+                        rel="lightbox-bl7471">
+                        <img src='/news/getPicture.aspx?id=7471' alt="Братский филиал Байкальского государственного университета отметил свое 20-летие"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        
+<P>Мэр г. Братска Сергей Серебренников по этому случаю написал на своей странице 
+в Facebook:<BR>«Братский филиал Байкальского государственного университета 
+празднует 20-летие. За это время более 7 000 выпускников получили качественное 
+высшее образование. Сейчас студенты филиала обучаются по программам бакалавриата 
+и магистратуры с лингвистическими стажировками в вузах-партнерах Китая. Более 50 
+выпускников филиала получили второе высшее образование в университетах Китая, 
+свыше 100 человек прошли обучение по программам лингвистических стажировок. 
+Братский филиал БГУ обеспечивает специалистами предприятия и учреждения 
+финансовой сферы и правоохранительных органов Братска и северных территорий 
+Иркутской области. Именно поэтому, когда встал вопрос о закрытии филиала, мы 
+всем городом подключились к его защите. И защитили! Филиал продолжает свою 
+работу.</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7471'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl5$HFcat" id="MainContent_LVnews_HFcat_5" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            1 апреля 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Финал конкурса на лучшую группу прошел в СКДЦ «Художественный» 
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7464&n=1&m=1'
+                        rel="lightbox-bl7464">
+                        <img src='/news/getPicture.aspx?id=7464' alt="Финал конкурса на лучшую группу прошел в СКДЦ «Художественный» "
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        
+<P>Лучшие группы Института государства и права БГУ 2020 и 2021 годов определили 
+в финале конкурса 31 марта. В связи с пандемией в прошлом году конкурс пришлось 
+отложить, поэтому победителей выбирали сразу за два года.</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7464'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl6$HFcat" id="MainContent_LVnews_HFcat_6" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            1 апреля 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Студенты БГУ заняли второе место в кейс-чемпионате, проходившем в Казахстане
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7465&n=1&m=1'
+                        rel="lightbox-bl7465">
+                        <img src='/news/getPicture.aspx?id=7465' alt="Студенты БГУ заняли второе место в кейс-чемпионате, проходившем в Казахстане"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        
+<P>Международный кейс-чемпионат «Case4Success», организованный университетом 
+Туран (Казахстан) состоялся в марте 2021 года. Одна из четырех команд 
+Байкальского государственного университета прошла отборочный этап. Студентки 
+команды «Предприниматели Сибири» Марина Арбузова, Маргарита Кравченко, Снежана 
+Брахнова и Виктория Геленкенова из Института народного хозяйства БГУ под 
+руководством кандидата экономических наук Марии Винокуровой стали одними из 
+лучших, и заняли почетное второе место. Они успешно справились с решением кейса 
+компании PayBox.money.</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7465'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl7$HFcat" id="MainContent_LVnews_HFcat_7" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            1 апреля 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Стартует «Спорт-Апрель»
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7466&n=1&m=1'
+                        rel="lightbox-bl7466">
+                        <img src='/news/getPicture.aspx?id=7466' alt="Стартует «Спорт-Апрель»"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        
+<P>С целью популяризации здорового образа жизни молодежи студенческий совет 
+Института управления и финансов Байкальского государственного университета 
+объявляет о начале регистрации на спортивно-оздоровительное мероприятие 
+«Спорт-Апрель», которое состоится в Колледже БГУ 18 апреля 2021 года в 12 часов. 
+Мероприятие проводится четвертый год подряд. Это спортивное событие способствует 
+расширению и укреплению контактов между студентами 
+университета.</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7466'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl8$HFcat" id="MainContent_LVnews_HFcat_8" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            31 марта 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Студенты БГУ организовали квест, посвященный Дню рождения кинотеатра «Художественный» 
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7459&n=1&m=1'
+                        rel="lightbox-bl7459">
+                        <img src='/news/getPicture.aspx?id=7459' alt="Студенты БГУ организовали квест, посвященный Дню рождения кинотеатра «Художественный» "
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        
+<P>Квест, посвященный Дню рождения кинотеатра «Художественный», состоялся в 
+Иркутске. Его цель – познакомить студентов Байкальского государственного 
+университета с историей кинотеатра и дать возможность ощутить уходящую эпоху. 
+При посещении кинотеатра многие студенты не видели в нем ничего, кроме актового 
+зала, поэтому главная тема квеста – «Закулисье «Художественного». Благодаря 
+квесту студенты могли совершить путешествие по всему кинотеатру и с помощью 
+заданий узнать интересные факты из его истории.</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7459'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl9$HFcat" id="MainContent_LVnews_HFcat_9" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            31 марта 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Замдекана Юридического факультета ЧИ БГУ стал экспертом Всероссийского конкурса 
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7460&n=1&m=1'
+                        rel="lightbox-bl7460">
+                        <img src='/news/getPicture.aspx?id=7460' alt="Замдекана Юридического факультета ЧИ БГУ стал экспертом Всероссийского конкурса "
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        
+<P>По итогам отборочных мероприятий по формированию экспертного совета 
+Всероссийского конкурса молодежных проектов в его состав вошел заместитель 
+декана юридического факультета Читинского института БГУ Михаил Кошелев. 
+Организатором конкурса выступает Федеральное агентство по делам молодежи. Всего 
+в 2021 году от кандидатов поступило 986 заявок, по результатам конкурсного 
+отбора в состав экспертного совета вошли 739 человек.</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7460'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl10$HFcat" id="MainContent_LVnews_HFcat_10" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            31 марта 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Конкурс для молодых и амбициозных – «Золотая стажировка»
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7461&n=1&m=1'
+                        rel="lightbox-bl7461">
+                        <img src='/news/getPicture.aspx?id=7461' alt="Конкурс для молодых и амбициозных – «Золотая стажировка»"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        
+<P>Заявку на участие в Федеральном конкурсе «Золотая стажировка» в рамках 
+реализации Всероссийской акции «Время карьеры – 2021» можно подать до 19 апреля. 
+Цель конкурса – выявить и поддержать талантливую молодежь, стремящуюся выстроить 
+свою карьеру, и предоставить ей возможность для трудоустройства. Организатор 
+конкурса профком студентов Уральского федерального университета имени первого 
+Президента Б.Н. Ельцина проводит его совместно с автономной некоммерческой 
+организацией «Россия – страна возможностей».</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7461'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl11$HFcat" id="MainContent_LVnews_HFcat_11" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            31 марта 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Занимательные беседы о лесе в цикле «Университетские субботы»
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7463&n=1&m=1'
+                        rel="lightbox-bl7463">
+                        <img src='/news/getPicture.aspx?id=7463' alt="Занимательные беседы о лесе в цикле «Университетские субботы»"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        
+<P>Уважаемые школьники и все желающие! Приглашаем на университетские субботы на 
+серию открытых онлайн-видеоуроков «Занимательные беседы о лесе, или неизвестный 
+окружающий мир, в котором мы живем».</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7463'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl12$HFcat" id="MainContent_LVnews_HFcat_12" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            30 марта 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Студенты БГУ провели финансовую игру
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7455&n=1&m=1'
+                        rel="lightbox-bl7455">
+                        <img src='/news/getPicture.aspx?id=7455' alt="Студенты БГУ провели финансовую игру"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        
+<P>Финансовая игра «В гостях у эрудитов» прошла 27 марта в Байкальском 
+университете. Ее организовали студенческие советы Института управления и 
+финансов и Института народного хозяйства.</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7455'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl13$HFcat" id="MainContent_LVnews_HFcat_13" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            30 марта 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Студенты БГУ одержали победу в конкурсе статистических постеров
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7456&n=1&m=1'
+                        rel="lightbox-bl7456">
+                        <img src='/news/getPicture.aspx?id=7456' alt="Студенты БГУ одержали победу в конкурсе статистических постеров"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        <P>Один раз в два года Территориальный орган Федеральной службы государственной статистики по Иркутской области проводит для школьников и студентов Конкурс статистических постеров. Статистический постер – это одностраничная презентация, которая рассказывает интересную историю с использованием статистических инструментов. В 2020-2021 учебном году темой постеров стала окружающая среда, биология или устойчивое развитие.</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7456'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl14$HFcat" id="MainContent_LVnews_HFcat_14" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            30 марта 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Турнир по боулингу
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7457&n=1&m=1'
+                        rel="lightbox-bl7457">
+                        <img src='/news/getPicture.aspx?id=7457' alt="Турнир по боулингу"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        <P>Первый в Иркутске турнир среди студентов «Лига боулинга» состоялся в минувшее воскресенье. Команды состояли из четырех человек и формировались из учащихся вузов и СПО. Помимо основных участников команде надо было иметь одного запасного игрока и группу поддержки для дополнительной мотивации. Всего в турнире приняло участие 16 команд.</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7457'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl15$HFcat" id="MainContent_LVnews_HFcat_15" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            30 марта 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Губернатор отметил работу филиала БГУ в г. Братcке
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7458&n=1&m=1'
+                        rel="lightbox-bl7458">
+                        <img src='/news/getPicture.aspx?id=7458' alt="Губернатор отметил работу филиала БГУ в г. Братcке"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        <P>Губернатор Иркутской области Игорь Кобзев сегодня опубликовал на своей странице в Инстаграм информацию о Братском филиале Байкальского госуниверситета.</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7458'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl16$HFcat" id="MainContent_LVnews_HFcat_16" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            29 марта 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Студенты БГУ – серебряные призеры
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7451&n=1&m=1'
+                        rel="lightbox-bl7451">
+                        <img src='/news/getPicture.aspx?id=7451' alt="Студенты БГУ – серебряные призеры"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        
+<P>Финальный этап Всероссийского чемпионата по финансовой грамотности состоялся 
+в онлайн-формате. Мероприятие проведено в рамках национальной стратегии 
+повышения финансовой грамотности населения в Российской 
+Федерации.</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7451'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl17$HFcat" id="MainContent_LVnews_HFcat_17" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            29 марта 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Состоялся финальный этап олимпиады по иностранным языкам 
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7452&n=1&m=1'
+                        rel="lightbox-bl7452">
+                        <img src='/news/getPicture.aspx?id=7452' alt="Состоялся финальный этап олимпиады по иностранным языкам "
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        
+<P>На базе Байкальского государственного университета 27 марта 2021 года прошел 
+финальный этап Лингвострановедческой олимпиады по иностранным языкам 
+(английский, французский, немецкий языки) Открытой региональной межвузовской 
+олимпиады обучающихся Иркутской области «Золотой фонд Сибири».</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7452'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl18$HFcat" id="MainContent_LVnews_HFcat_18" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            29 марта 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Студенты БГУ приняли участие в подготовке праздничного концерта
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7453&n=1&m=1'
+                        rel="lightbox-bl7453">
+                        <img src='/news/getPicture.aspx?id=7453' alt="Студенты БГУ приняли участие в подготовке праздничного концерта"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        
+<P>Праздник, посвященный 210-летию войск внутреннего порядка и 5-летию 
+образования Росгвардии, был организован в минувшую субботу, 27 марта 2021 года, 
+на полигоне, расположенном на территории музея «На свалке», на 9 км 
+Александровского тракта. Студенты Байкальского государственного университета 
+приняли участие в праздничном концерте и организации интерактивной программы. На 
+сцене выступили творческие коллективы ведомственных подразделений и воинских 
+частей.</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7453'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl19$HFcat" id="MainContent_LVnews_HFcat_19" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            29 марта 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Студенты БГУ заняли призовые места на турнире по плаванию
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7454&n=1&m=1'
+                        rel="lightbox-bl7454">
+                        <img src='/news/getPicture.aspx?id=7454' alt="Студенты БГУ заняли призовые места на турнире по плаванию"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        <P>Областной турнир по плаванию среди студентов организаций высшего образования Иркутской области и в зачет региональной Спартакиады вузов состоялся в минувшую пятницу в ВСК «Солнечный». Команда БГУ заняла III общекомандное место и I место в эстафете среди мужских команд. В турнире принимали участие студенты ИГУ, ИРНИТУ, ИРГУПС, ИГМУ и филиала Российского госуниверситета физкультуры, спорта и туризма.</P>
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7454'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl20$HFcat" id="MainContent_LVnews_HFcat_20" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            24 марта 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            II УНИВЕРСИТЕТСКИЙ МУЗЫКАЛЬНЫЙ ФЕСТИВАЛЬ ПЕСНИ НА ИНОСТРАННОМ ЯЗЫКЕ «THE SOUND OF MUSIC»
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7438&n=1&m=1'
+                        rel="lightbox-bl7438">
+                        <img src='/news/getPicture.aspx?id=7438' alt="II УНИВЕРСИТЕТСКИЙ МУЗЫКАЛЬНЫЙ ФЕСТИВАЛЬ ПЕСНИ НА ИНОСТРАННОМ ЯЗЫКЕ «THE SOUND OF MUSIC»"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        <P>Заявки принимаются до 15 апреля 2021 года на кафедре иностранных языков для профессиональных целей и на кафедре теоретической и прикладной лингвистики (ауд. 1-418, доц. Е.А. Боброва, доц. М.А. Егорова) или через преподавателей иностранного языка.</P>        
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7438'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            
+            
+            
+            
+            <tr style="border-bottom:1px solid #cccccc;">
+                <td>
+                    <input type="hidden" name="ctl00$MainContent$LVnews$ctrl21$HFcat" id="MainContent_LVnews_HFcat_21" value="1" />
+                    <div>
+                        <span style=" color:#999999; float:right; margin-left:20px;">
+                            11 февраля 2021 г.
+                        </span>
+                        <span style=" font-weight:bold; color:#336699; font-size:1.3em;">
+                            Студенты БГУ примут участие в проектах образовательного центра «Сириус»
+                        </span>
+                    </div>
+                    <a href='/news/getpicture.aspx?id=7325&n=1&m=1'
+                        rel="lightbox-bl7325">
+                        <img src='/news/getPicture.aspx?id=7325' alt="Студенты БГУ примут участие в проектах образовательного центра «Сириус»"
+                            style='display:block'
+                            class="cover" /></a>
+                    <div>
+                        <P>Студенты Байкальского государственного университета примут участие в конкурсе образовательного модуля Научно-технологического университета «Сириус» (г. Сочи).</P><P>Конкурс предполагает обучение по программе «Эффективные модели управления образовательными системами». Он стартует 5 апреля 2021 года. Это шанс для студентов 3–4 курсов бакалавриата и 1–2 курса магистратуры проявить себя и продемонстрировать свои таланты.</P>   
+
+                    </div>
+                    <div style="text-align:right;">
+                        <a href='/news/newsdetail.aspx?id=7325'
+                            style='display:block'>Подробнее...</a>
+                    </div>
+                </td>
+            </tr>
+        
+            </table>
+        
+
+
+                    
+                </div>
+                <div style="clear:both;"></div>
+                <div class="footer" style=" font-size:1.0em;">&copy;
+                    <span id="Lyear">2021</span>, ФГБОУ ВО "Байкальский государственный университет"
+                    <div style="background:#ffffff; padding:10px; margin:30px 100px;">
+                            <h1>Обращения граждан</h1>
+<div style="text-align:center; margin-bottom:20px;">
+  <p><a href="/feedback/default.aspx" class="btnm">Электронное обращение</a>
+    <a href="/feedback/letter.aspx" class="btnm">Письменное обращение</a>
+    <a href="/feedback/person.aspx" class="btnm">Личный прием граждан</a></p>
+
+        
+</div>
+<hr />
+<style>
+    .btnm {
+        background:#164676;
+        color:#ffffff!important ;
+        border-radius:5px;
+        padding:7px 20px;
+        text-decoration:none;
+    }
+        .btnm:hover {
+            background: #6699ff;
+            
+            color: #ffffff !important;
+            border-radius: 5px;
+            padding: 7px 20px;
+            text-decoration: none;
+        }
+</style>
+
+
+
+                   
+                    <h1>E-mail для контактов:</h1>
+                    <table class="noborder" style="margin:10px auto; color:#000000;">
+                        <tr>
+                            <td style="text-align:right; padding:10px 10px;">Официальный электронный адрес администрации</td><td style="text-align:left; padding:10px 10px;"><a style=" text-decoration:underline;" href="mailto:info@bgu.ru">info@bgu.ru</a></td>
+                            </tr>
+                        <tr>
+                            <td style="text-align:right; padding:10px 10px;">По вопросам поступления</td><td style="text-align:left; padding:10px 10px;"><a style="text-decoration:underline;" href="mailto:priem@bgu.ru">priem@bgu.ru</a></td>
+                            </tr>
+                        <tr>
+                            <td style="text-align:right; padding:10px 10px;">По вопросам работы сайта</td><td style="text-align:left; padding:10px 10px;"><a style="text-decoration:underline;" href="mailto:webmaster@bgu.ru">webmaster@bgu.ru</a></td>
+                        </tr>
+                    </table>
+                     </div>
+                    <div>
+                        <!-- Yandex.Metrika informer -->
+                        <a href="https://metrika.yandex.ru/stat/?id=25153229&amp;from=informer" target="_blank" rel="nofollow">
+                            <img src="https://informer.yandex.ru/informer/25153229/3_0_FFFFFFFF_EEEEEEFF_0_pageviews" style="width:88px; height:31px; border:0;"
+                                alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)"
+                            />
+                        </a>
+                        <!-- /Yandex.Metrika informer -->
+                        <!-- Yandex.Metrika counter -->
+                        <script>
+                            (function (d, w, c) {
+                                (w[c] = w[c] || []).push(function () {
+                                    try {
+                                        w.yaCounter25153229 = new Ya.Metrika({
+                                            id: 25153229,
+                                            clickmap: true,
+                                            trackLinks: true,
+                                            accurateTrackBounce: true,
+                                            webvisor: true,
+                                            trackHash: true
+                                        });
+                                    } catch (e) {}
+                                });
+                                var n = d.getElementsByTagName("script")[0],
+                                    s = d.createElement("script"),
+                                    f = function () {
+                                        n.parentNode.insertBefore(s, n);
+                                    };
+                                s.type = "text/javascript";
+                                s.async = true;
+                                s.src = "https://mc.yandex.ru/metrika/watch.js";
+                                if (w.opera == "[object Opera]") {
+                                    d.addEventListener("DOMContentLoaded", f, false);
+                                } else {
+                                    f();
+                                }
+                            })(document, window, "yandex_metrika_callbacks");
+                        </script>
+                        <noscript>
+                            <div>
+                                <img src="https://mc.yandex.ru/watch/25153229" style="position:absolute; left:-9999px;" alt=""
+                                />
+                            </div>
+                        </noscript>
+                        <!-- /Yandex.Metrika counter -->
+                    </div>
+                    <script>
+                        (function (i, s, o, g, r, a, m) {
+                            i['GoogleAnalyticsObject'] = r;
+                            i[r] = i[r] || function () {
+                                (i[r].q = i[r].q || []).push(arguments)
+                            }, i[r].l = 1 * new Date();
+                            a = s.createElement(o),
+                                m = s.getElementsByTagName(o)[0];
+                            a.async = 1;
+                            a.src = g;
+                            m.parentNode.insertBefore(a, m)
+                        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                        ga('create', 'UA-84881758-1', 'auto');
+                        ga('send', 'pageview');
+                    </script>
+                    <script>
+                        (function (d, t, p) {
+                            var j = d.createElement(t);
+                            j.async = true;
+                            j.type = "text/javascript";
+                            j.src = ("https:" == p ? "https:" : "http:") + "//stat.sputnik.ru/cnt.js";
+                            var s = d.getElementsByTagName(t)[0];
+                            s.parentNode.insertBefore(j, s);
+                        })(document, "script", document.location.protocol);
+                    </script>
+                    <div style="font-size:8pt;margin-top:5px;">Все материалы сайта доступны по лицензии Creative Commons Attribution 4.0 International</div>
+                </div>
+            </div>
+            
+            
+
+        
+<script type='text/javascript'>new Sys.WebForms.Menu({ element: 'MenuTop', disappearAfter: 500, orientation: 'horizontal', tabIndex: 0, disabled: false });</script><script type='text/javascript'>new Sys.WebForms.Menu({ element: 'MenuLeft', disappearAfter: 500, orientation: 'vertical', tabIndex: 0, disabled: false });</script></form>
+    </body>
+
+    </html>

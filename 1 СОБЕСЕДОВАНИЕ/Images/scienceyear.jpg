@@ -1,0 +1,220 @@
+
+    <!DOCTYPE html>
+    <html lang="ru-ru">
+
+    <head id="Head1"><meta name="google-site-verification" content="jjf0soS60kPd1w1KbApi-Y-mAWtF2U9VJkI18FcfxLI" /><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>
+	Байкальский государственный университет (БГУ - Новости)
+</title><meta name="description" content="Байкальский государственный университет (БГУ) - один из старейших вузов Сибири." /><meta name="keywords" content="БГУ, Байкальский государственный университет, высшее образование, среднее профессиональное образование, бакалавриат, специалитет, магистратура, аспирантура, колледж, среднее профессиональное образование" /> 
+        <script src="/js/jquery2.js"></script>
+        <script src="/js/jquery-migrate-1.3.0.min.js"></script>
+        <script src="/js/jquery.cookie.js"></script> 
+        <script src="/js/jquery.speccialversion.js"></script>
+        <script>
+            jQuery(document).ready(function () {
+                $('#langb a img').hover(function () {
+                    this.src = '/img/2016/langbh.jpg';
+                }, function () {
+                    this.src = '/img/2016/langb.jpg';
+                });
+                $('#paymentBox img').hover(function () {
+                    this.src = '/img/ui/payment-hover.jpg';
+                }, function () {
+                    this.src = '/img/ui/payment.jpg';
+                });
+                $("#MenuLeft").show();
+                $('#asimple').specialVersion({
+                    'base-style': '/Styles/light.css'
+                });
+                $('.sectionShowHide').click(function () {
+                    console.log('sectionID: ');
+                    var sectionID = $(this).attr('id');
+                    var section = '.section' + sectionID;
+                    console.log('sectionID: ' + sectionID);
+                    console.log('section: ' + section);
+                    $(section).slideToggle("fast");
+                    return false;
+                });
+
+                var pathname = window.location.pathname;
+                if (pathname == '/news/') {
+                    $("#MainContent_DDLyear option[value=2014]").remove();
+                    $("#MainContent_DDLyear option[value=2015]").remove();
+                }
+
+                if (pathname == '/massmedia/gazeta/') {
+                    $("#MainContent_RBLyear_4").hide(); 
+                    $("label:last-child").hide();
+                }
+
+                // console.log(pathname);
+            });
+        </script>
+        <script src="/js/audioplayer.js"></script>
+        <script src="/js/qa_accordeon/jquery.accordion.js"></script>
+        <script src="/js/qa_accordeon/jquery.easing.1.3.js"></script>
+        <script>
+            $(function () {
+                $('#st-accordion').accordion({
+                    oneOpenedItem: true
+                });
+                $('#st-accordion2').accordion({
+                    oneOpenedItem: true
+                });
+            });
+        </script>
+        <script id="slimbox2-js" src="/js/Slimbox-2.04/js/slimbox2.js"></script>
+        <link href="Styles/Sitenew.css?ups20" rel="stylesheet" /><link href="encyclopedia_irkutskoy_oblasti/source/style.css?37" rel="stylesheet" /><link rel="stylesheet" href="Styles/qa_accordeon/style.css" /><link rel="SHORTCUT ICON" href="/favicon.png" type="image/png" /><link media="screen" href="/js/Slimbox-2.04/css/slimbox2.css?ver=1.1" rel="stylesheet" /><link rel="stylesheet" href="Styles/audioplayer.css" /><link rel="stylesheet" type="text/css" href="Styles/font-awesome.min.css" />
+        <script>
+            var images = new Array();
+            images[0] = "/img/shapka/16.jpg";
+            images[1] = "/img/shapka/01.jpg";
+            images[2] = "/img/shapka/02.jpg";
+            images[3] = "/img/shapka/03.jpg";
+            images[4] = "/img/shapka/04.jpg";
+            images[5] = "/img/shapka/05.jpg?2";
+            images[6] = "/img/shapka/06.jpg";
+            images[7] = "/img/shapka/07_.jpg";
+            images[8] = "/img/shapka/08.jpg";
+            images[9] = "/img/shapka/09.jpg";
+            images[10] = "/img/shapka/10.jpg";
+            images[11] = "/img/shapka/11.jpg";
+            images[12] = "/img/shapka/12.jpg";
+            images[13] = "/img/shapka/13.jpg";
+            images[14] = "/img/shapka/14.jpg";
+            images[15] = "/img/shapka/15_.jpg";
+            images[16] = "/img/shapka/17.jpg";
+
+            function animate(i, alfa, step) {
+                slide = document.getElementById("slide");
+                slide.style.opacity = alfa / 100;
+                slide.style.filter = "progid:DXImageTransform.Microsoft.Alpha(opacity=" + alfa + ")";
+                slide.style.filter = "alpha(opacity=" + alfa + ")";
+                if ((alfa - step) > 0) {
+                    setTimeout("animate(" + i + "," + (alfa - step) + "," + step + ");", 5);
+                } else {
+                    slide.style.opacity = 0;
+                    slide.style.filter = "progid:DXImageTransform.Microsoft.Alpha(opacity=" + 0 + ")";
+                    slide.style.filter = "alpha(opacity=" + 0 + ")";
+                    i = i + 1;
+                    if (i > 16) {
+                        i = 0
+                    };
+                    var img = new Image();
+                    img.src = images[i];
+                    img.onload = slide.src = img.src;
+                    setTimeout("animate_(" + i + ", 0, 1);", 10);
+                }
+            }
+
+            function animate_(i, alfa, step) {
+                slide = document.getElementById("slide");
+                slide.style.opacity = alfa / 100;
+                slide.style.filter = "progid:DXImageTransform.Microsoft.Alpha(opacity=" + alfa + ")";
+                slide.style.filter = "alpha(opacity=" + alfa + ")";
+                if ((alfa + step) < 100) {
+                    setTimeout("animate_(" + i + "," + (alfa + step) + "," + step + ");", 5);
+                } else {
+                    slide.style.opacity = 1.0;
+                    slide.style.filter = "progid:DXImageTransform.Microsoft.Alpha(opacity=" + 100 + ")";
+                    slide.style.filter = "alpha(opacity=" + 100 + ")";
+                    setTimeout("animate(" + i + ", 100, 1);", 5000);
+                }
+            }
+            setTimeout("animate(0, 100, 1);", 5000);
+        </script>
+    <style type="text/css">
+	/* <![CDATA[ */
+	#MenuTop { background-color:Transparent; }
+	#MenuTop img.icon { border-style:none;vertical-align:middle; }
+	#MenuTop img.separator { border-style:none;display:block; }
+	#MenuTop img.horizontal-separator { border-style:none;vertical-align:middle; }
+	#MenuTop ul { list-style:none;margin:0;padding:0;width:auto; }
+	#MenuTop ul.dynamic { z-index:1;margin-left:2px;margin-top:2px; }
+	#MenuTop a { text-decoration:none;white-space:nowrap;display:block; }
+	#MenuTop a.static { padding-left:0.15em;padding-right:0.15em; }
+	#MenuTop a.popout { background-image:url("img/to.gif");background-repeat:no-repeat;background-position:right center;padding-right:14px; }
+	#MenuTop a.popout-dynamic { background:url("img/tod.gif") no-repeat right center;padding-right:14px; }
+	/* ]]> */
+</style><style type="text/css">
+	/* <![CDATA[ */
+	#MenuLeft { background-color:#2E7CBB;width:215px; }
+	#MenuLeft img.icon { border-style:none;vertical-align:middle; }
+	#MenuLeft img.separator { border-style:none;display:block; }
+	#MenuLeft ul { list-style:none;margin:0;padding:0;width:auto; }
+	#MenuLeft ul.dynamic { z-index:1; }
+	#MenuLeft a { color:White;text-decoration:none;white-space:nowrap;display:block; }
+	#MenuLeft a.static { width:210px;text-decoration:none; }
+	#MenuLeft a.popout { background-image:url("img/tod.gif");background-repeat:no-repeat;background-position:right center;padding-right:14px; }
+	/* ]]> */
+</style></head>
+
+    <body>
+        <form method="post" action="/" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="DKpLZorMPqxYxMFGi7Z+tn8T1RFk1gyFFxps3J80bEeR7t9XxJV4MylnWF59CdZLEyEXtcHzwvbv7MUic7k8pqX6y31cF0jxaIA9Pv1PcCAXnaGtAVlIUML4VrEp8+3yvRYrhtDAFiGsCUmovpIk5fvJ4R0QQOiLgT9A8RhaUUVmW2bDU6JkzNsrOvHbTrf3b2aiINpqliZXFnvo+efwpirJ38StZxdorOeYbiQZms86VpGi4WLZ1XrIJckiH09mqrY5rsXOR3QZe0tzYP0LyQ==" />
+
+
+<script src="/WebResource.axd?d=muO4q32s-IGiD15BMFenhADxS4Hr1uAgslrBJyAf1Eu7uJvlpUJSk4rEwyX1Li5APtekde8JLejX5oSsqFGtU1T2v0YxCXHcIiWtbRh8Y7s1&amp;t=634972003065510185" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="cTs7fJ8Kj4ZQwPyqpk6/EigkLZFBRp12CLNukVEAKLJpuUlJsFg6kx0szSL1hSLV0FpqQ2OQXKi2Ms/2XyGPsmbEEvzm7PCRaQT0IYbcVnQa59pneKxeJbuPpd3kMQD3N4CjJH+nnLyy6ZqbZwCv/dSxeL8i5ymXbjGnvt3065XbGGMv1zttRy5rjM4TgmHv7499wHFUKfK5NPmKQuMJs8JLSOmWyN0dIZDIgRAMIHKJirN6oF/3TrQ+k8AOU5aTuAargZ758PnnphUMpkzMtV0kaWpffVcuM1KhAjCDTD6Rc7kZbKwSKemFsDaPfUTKTGKuBf/YpxD4pV8uDQC/A6YYjwjuskVdZVjhLGz0F2/6RdOOmdXpZ2c9gtAEy3LS/0XD3xNHbr+1isOD8Sa8WtJe5UCGa8JoCIqR9rMON334ZW6YrnVKvjChXT8cTu7NDlHB2h0YPjLc/E6yF75JZ0hegsnHHG16VzQCP1ifUE4ohAOQnl6YxVya8Gn+djgMsByS0bIvuixKD7oqbt1y2f0GzZtV+RSNM7vLhWkN4cH/0w8rrfuL8NLjfdYAoTOXZGp9X6k516YB2p8nyynCew==" />
+            
+
+            
+
+            <div class="page">
+                <div class="header">
+                    <div class="pic">
+                        <img src="/img/shapka/16.jpg" alt="Байкальский государственный университет" id="slide" style=" width:465px; height:200px; display:block;"
+                        />
+                    </div>
+                    
+                    <div class="bgmain">
+                        <img src="/img/logo20.png" alt="Байкальский государственный университет" />
+                    </div>
+                    <div class="priem">
+                        <span style="font-size:1.5em;">т. (3952) 5-0000-5</span>
+                        <br />E-mail:
+                        <a href="mailto:priem@bgu.ru" style="text-decoration:none; color:#000000;">priem@bgu.ru</a>
+                        <br />664003, г. Иркутск, ул. Ленина, 11</div>
+                    <div class="priemask" style="z-index:99;">
+                        <a href="http://prof.bgu.ru/olimp/">Олимпиады
+                            <br>и профориентация</a>
+                    </div>
+                    <div class="priemsite">
+                        <a href="http://bgu.ru/abitur/">Прием 2021</a>
+                    </div>
+                    <!-- <div class="priemonline"><a href="https://priem.bgu.ru/">ON-LINE подача заявления</a></div> -->
+                    <div style="position:absolute;top:60px;left:513px;" id="socblock">
+                    </div>
+                    <div style="height:10px;"></div>
+                    <div class="s6 obr">
+                        <a href="http://dissovet.bgu.ru/">ДИССЕРТАЦИОННЫЕ СОВЕТЫ</a>
+                    </div>
+                    <div class="s5 obr">
+                        <a href="http://bgu.ru/abitur/asp/">АСПИРАНТУРА и ДОКТОРАНТУРА</a>
+                    </div>
+                    <div class="s4 obr">
+                        <a href="http://ipk.bgu.ru/">ПОВЫШЕНИЕ КВАЛИФИКАЦИИ</a>
+                    </div>
+                    <div class="s3 obr">
+                        <a href="http://bgu.ru/abitur/mag/">МАГИСТРАТУРА</a>
+                    </div>
+                    <div class="s2 obr">
+                        <a href="http://bgu.ru/abitur/bach/">БАКАЛАВРИАТ и СПЕЦИАЛИТЕТ</a>
+                    </div>
+                    <div class="s1 obr">
+                        <a href="http://bgu.ru/abitur/spo/">СРЕДНЕЕ профессиональное образование</a>
+                    </div>
+                    <a href="#special" style="color:#fff;position:absolute;right:30px;top:15px; font-size:1.2em;" id="asimple" class="asimple"
+                        itemprop="Copy">Версия для слабовидящих</a>
+                    <!--<div id="divflags" style=""></div>-->
+                </div>
+                <div id="menutopdiv">
+                    <a href="#MenuTop_SkipLink"><img alt="Проход по ссылкам навигации" src="/WebResource.axd?d=U1OGT2dQ4Rgu132kQUXukEd-fwFhcgP8GvEti9uSUOOirzgO_3mFA3TVA-vUclbaOXofZB8nO63WbPxRnbYx-EtAq0UxughCcJr_rZj86nM1&amp;t=634972003065510185" width="0" height="0" border="0" /></a><div class="menutop " id="MenuTop">
+	<ul class="level1">
+		<li><a title="Вся информация об университете" class="popout level1" href="/sveden/">Сведения об образовательной организации</a><ul class="level2">
+			<li><a title="Информация о наименовании, учредителях, дате создания, месте нахождения, режиме и графике работы, контактных телефнах и адресах электронной почты" class="level2" href="/sveden/common/">Основные сведения</a></li><li><a class="popout-dynamic level2" href="/sveden/struct/">Структура и органы управления образовательной организацией</a><ul class="level3">
+				<li><a class="level3" href="/sveden/struct/psovet1.aspx">Попечительский совет</a></li><li><a class="level3" href="/sveden/struct/usovet.aspx">Ученый совет</a></li><li><a class="level3" href="/sveden/struct/prorectors.aspx">Ректорат</a></li><li><a class="level3" href="/sveden/struct/directors.aspx">Директора филиалов</a></li><li><a class="level3" href="/sveden/struct/devision.aspx">Структурные подразделения</a></li><li><a class="level3" href="/sveden/struct/branchs.aspx">Филиалы</a></li>
+			</ul></li><li><a class="level2" href="/sveden/document/">Документы</a></li><li><a class="level2" href="/sveden/education/">Образование</a></li><li><a class="level2" href="/sveden/eduStandarts/">Образовательные стандарты</a></li><li><a class="popout-dynamic level2" href="/sveden/employees/">Руководство. Педагогический состав</a><ul class="level3">
+				<li><a class="level3" href="/sveden/struct/prorectors.aspx">Ректорат</a></li><li><a class="level3" href="/sveden/struct/directors.aspx">Директора филиалов</a></li><li><a class="level3" href="/sveden/employees/kaf.aspx">Педагогический состав</a></li><li><a class="level3" href="/sveden/employees/pps.aspx">Резюме преподавателей</a></li>
+			</ul></li><li><a class="level2" href="/sveden/objects/">Материально-техническое обеспечение и оснащенность образовательного процесса</a></li><li><a class="popout-dynamic level2" href="/sveden/grants/">Стипендии и иные виды материальной поддержки</a><ul class="level3">
+				<li><a title="Информация о стипендиях, положение о стипендиальном обеспечении и других формах материальной поддержки студентов и аспирантов в ФГБОУ ВО «БГУ», приказы о размере стипендий и надбавок обучающимся" class="level3" href="/sveden/grants/help.aspx">Стипендии</a></li><li><a title="Информация о наличии общежитий, общей и жилой площади, приказы о стоимости прожива
